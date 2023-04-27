@@ -4,7 +4,7 @@
         <tab id="mobile_version" translate="label" sortOrder="1">
             <label>Mobile Version</label>
         </tab>
-        <section id="configuration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="mobile_version_configuration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Mobile Version Configuration</label>
             <tab>mobile_version</tab>
             <resource>MIT_MobileConfiguration::configuration</resource>
