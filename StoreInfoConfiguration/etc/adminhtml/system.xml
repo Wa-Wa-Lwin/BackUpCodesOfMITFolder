@@ -2,11 +2,12 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <tab id="store_info" translate="label" sortOrder="2">
-            <label>Store Info Configuration</label>
+            <label>Store Info </label>
         </tab>
         <section id="store_info_configuration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-            <label>Configuration</label>
-            <tab>store_info</tab>
+            <label>Store Info Configuration</label>
+            <tab>mobile_version</tab> 
+            
             <resource>MIT_StoreInfoConfiguration::configuration</resource>
 
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
