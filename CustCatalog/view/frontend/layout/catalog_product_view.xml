@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+		<css src="MIT_CustCatalog::css/product-detail.css"/>
+	</head>
+    <body>
+        <referenceContainer name="product.info.stock.sku">
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.weight" template="MIT_CustCatalog::product/view/attribute.phtml" after="product.info.sku">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getWeight</argument>
+                    <argument name="at_code" xsi:type="string">weight</argument>
+                    <argument name="css_class" xsi:type="string">sku</argument>
+                    <argument name="at_label" xsi:type="string">default</argument>
+                    <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Catalog\Block\Product\View\Description" name="product.info.extSku" template="MIT_CustCatalog::product/view/attribute.phtml" after="product.info.sku">
+                <arguments>
+                    <argument name="at_call" xsi:type="string">getMySku</argument>
+                    <argument name="at_code" xsi:type="string">my_sku</argument>
+                    <argument name="css_class" xsi:type="string">sku</argument>
+                    <argument name="at_label" xsi:type="string">default</argument>
+                    <argument name="add_attribute" xsi:type="string">itemprop="sku"</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

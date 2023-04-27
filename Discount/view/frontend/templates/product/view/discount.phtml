@@ -1,0 +1,31 @@
+<?php
+
+/** @var Magento\Catalog\Block\Product\View\Description $block */
+$product = $block->getProduct();
+?>
+<?php $discountHelper = $this->helper(MIT\Discount\Helper\DiscountHelper::class);
+$discountData = $discountHelper->getLabelInfo($product->getId()); ?>
+<?php if (count($discountData) > 0) : ?>
+    <div class="custom-ds-lbl product-detail hidden <?= $discountData['main_class'] ?>">
+        <?php if ($discountData['style']) : ?>
+            <img class="discount-img" src="<?= $discountData['imgPath'] ?>" style="<?= $discountData['style'] ?>">
+        <?php else : ?>
+            <img class="discount-img" src="<?= $discountData['imgPath'] ?>">
+        <?php endif; ?>
+        <?php if ($discountData['label_styles']) : ?>
+            <span class="discount-txt <?= $discountData['sub_class'] ?>" style="<?= $discountData['label_styles'] ?>"><?= $discountData['label'] ?></span>
+        <?php else : ?>
+            <span class="discount-txt <?= $discountData['sub_class'] ?>"><?= $discountData['label'] ?></span>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "MIT_Discount/js/discount": {
+                
+            }
+        }
+    }
+</script>

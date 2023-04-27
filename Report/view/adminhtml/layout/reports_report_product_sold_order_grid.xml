@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+    	<link src="MIT_Report::js/custom-report.js"/>
+    </head>
+    <update handle="mit_report_order_grid"/>
+    <body>
+        <referenceBlock name="adminhtml.report.grid">
+            <arguments>
+                <argument name="id" xsi:type="string">gridProductsSoldOrder</argument>
+                <argument name="dataSource" xsi:type="object" shared="false">MIT\Report\Model\ResourceModel\Order\Product\Collection\Initial</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="adminhtml.report.grid.export">
+            <arguments>
+                <argument name="exportTypes" xsi:type="array">
+                    <item name="csv" xsi:type="array">
+                        <item name="urlPath" xsi:type="string">*/*/exportSoldCsv</item>
+                    </item>
+                    <item name="excel" xsi:type="array">
+                        <item name="urlPath" xsi:type="string">*/*/exportSoldExcel</item>
+                    </item>
+                </argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="adminhtml.report.grid.columnSet">
+            <arguments>
+                <argument name="id" xsi:type="string">report_product_sold_order</argument>
+                <argument name="count_totals" xsi:type="string">1</argument>
+            </arguments>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.order_id" as="order_id">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Order Id</argument>
+                    <argument name="type" xsi:type="string">string</argument>
+                    <argument name="index" xsi:type="string">order_id</argument>
+                    <argument name="id" xsi:type="string">order_id</argument>
+                    <argument name="column_css_class" xsi:type="string">col-id</argument>
+                    <argument name="header_css_class" xsi:type="string">col-id</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.status" as="status">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Order Status</argument>
+                    <argument name="type" xsi:type="string">string</argument>
+                    <argument name="index" xsi:type="string">order_status</argument>
+                    <argument name="id" xsi:type="string">status</argument>
+                    <argument name="column_css_class" xsi:type="string">col-status</argument>
+                    <argument name="header_css_class" xsi:type="string">col-status</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.shipping_method" as="shipping_method">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Shipping Method</argument>
+                    <argument name="type" xsi:type="string">string</argument>
+                    <argument name="index" xsi:type="string">shipping_method</argument>
+                    <argument name="id" xsi:type="string">shipping_method</argument>
+                    <argument name="column_css_class" xsi:type="string">col-shipping-method</argument>
+                    <argument name="header_css_class" xsi:type="string">col-shipping-method</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.payment_method" as="payment_method">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Payment Method</argument>
+                    <argument name="type" xsi:type="string">string</argument>
+                    <argument name="index" xsi:type="string">payment_method</argument>
+                    <argument name="id" xsi:type="string">payment_method</argument>
+                    <argument name="column_css_class" xsi:type="string">col-payment-method</argument>
+                    <argument name="header_css_class" xsi:type="string">col-payment-method</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.shipment_id" as="shipment_id">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Shipment</argument>
+                    <argument name="type" xsi:type="string">string</argument>
+                    <argument name="index" xsi:type="string">shipment_id</argument>
+                    <argument name="id" xsi:type="string">shipment_id</argument>
+                    <argument name="column_css_class" xsi:type="string">col-shipment-id</argument>
+                    <argument name="header_css_class" xsi:type="string">col-shipment-id</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.invoice_id" as="invoice_id">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Invoice</argument>
+                    <argument name="type" xsi:type="string">string</argument>
+                    <argument name="index" xsi:type="string">invoice_id</argument>
+                    <argument name="id" xsi:type="string">invoice_id</argument>
+                    <argument name="column_css_class" xsi:type="string">col-invoice-id</argument>
+                    <argument name="header_css_class" xsi:type="string">col-invoice-id</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.name" as="name">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Product</argument>
+                    <argument name="type" xsi:type="string">text</argument>
+                    <argument name="index" xsi:type="string">order_items_name</argument>
+                    <argument name="id" xsi:type="string">name</argument>
+                    <argument name="column_css_class" xsi:type="string">col-product</argument>
+                    <argument name="header_css_class" xsi:type="string">col-product</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.sku" as="sku">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">SKU</argument>
+                    <argument name="type" xsi:type="string">text</argument>
+                    <argument name="index" xsi:type="string">order_items_sku</argument>
+                    <argument name="id" xsi:type="string">sku</argument>
+                    <argument name="column_css_class" xsi:type="string">col-sku</argument>
+                    <argument name="header_css_class" xsi:type="string">col-sku</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.ordered_price" as="ordered_price">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Item Price</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">order_items_base_price</argument>
+                    <argument name="id" xsi:type="string">order_items_base_price</argument>
+                    <argument name="column_css_class" xsi:type="string">col-base-price</argument>
+                    <argument name="header_css_class" xsi:type="string">col-base-price</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.ordered_qty" as="ordered_qty">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Item Qty</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">ordered_qty</argument>
+                    <argument name="id" xsi:type="string">ordered_qty</argument>
+                    <argument name="column_css_class" xsi:type="string">col-qty</argument>
+                    <argument name="header_css_class" xsi:type="string">col-qty</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.tax_amount" as="tax_amount">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Tax Amount</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">order_items_tax_amount</argument>
+                    <argument name="id" xsi:type="string">order_items_tax_amount</argument>
+                    <argument name="column_css_class" xsi:type="string">col-tax-amount</argument>
+                    <argument name="header_css_class" xsi:type="string">col-tax-amount</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.ordered_items_total" as="ordered_items_total">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Item Total</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">ordered_items_total</argument>
+                    <argument name="id" xsi:type="string">ordered_items_total</argument>
+                    <argument name="column_css_class" xsi:type="string">col-ordered-items-total</argument>
+                    <argument name="header_css_class" xsi:type="string">col-ordered-items-total</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.shipping_amount" as="shipping_amount">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Shipping Amount</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">shipping_amount</argument>
+                    <argument name="id" xsi:type="string">shipping_amount</argument>
+                    <argument name="column_css_class" xsi:type="string">col-shipping-amount</argument>
+                    <argument name="header_css_class" xsi:type="string">col-shipping-amount</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.discount_amount" as="discount_amount">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Discount Amount</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">discount_amount</argument>
+                    <argument name="id" xsi:type="string">discount_amount</argument>
+                    <argument name="column_css_class" xsi:type="string">col-discount-amount</argument>
+                    <argument name="header_css_class" xsi:type="string">col-discount-amount</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.rewards_discount_amount" as="rewards_discount_amount">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Rewards Discount Amount</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">rewards_discount_amount</argument>
+                    <argument name="id" xsi:type="string">rewards_discount_amount</argument>
+                    <argument name="column_css_class" xsi:type="string">col-rewards-discount-amount</argument>
+                    <argument name="header_css_class" xsi:type="string">col-rewards-discount-amount</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.ordered_total" as="ordered_total">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Grand Total</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">ordered_total</argument>
+                    <argument name="id" xsi:type="string">ordered_total</argument>
+                    <argument name="column_css_class" xsi:type="string">col-ordered-total</argument>
+                    <argument name="header_css_class" xsi:type="string">col-ordered-total</argument>
+                </arguments>
+            </block>
+            <block class="Magento\Backend\Block\Widget\Grid\Column" name="adminhtml.report.grid.columnSet.order_refund" as="refund">
+                <arguments>
+                    <argument name="header" xsi:type="string" translate="true">Refunded Amount</argument>
+                    <argument name="type" xsi:type="string">number</argument>
+                    <argument name="index" xsi:type="string">refunded_amount</argument>
+                    <argument name="id" xsi:type="string">refunded_amount</argument>
+                    <argument name="column_css_class" xsi:type="string">col-ordered-refunded</argument>
+                    <argument name="header_css_class" xsi:type="string">col-ordered-refunded</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>

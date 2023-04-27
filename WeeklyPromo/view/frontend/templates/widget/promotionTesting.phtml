@@ -1,0 +1,314 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+use Magento\Framework\App\Action\Action;
+
+/** @var \MIT\WeeklyPromo\Block\Widget\Promotion $block */
+
+?>
+
+<?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) : ?>
+
+  <?php
+    $type = 'widget-product-grid';
+
+    $mode = 'grid';
+
+    $image = 'new_products_content_widget_grid';
+    $items = $block->getProductCollection()->getItems();
+
+    $showWishlist = true;
+    $showCompare = true;
+    $showCart = true;
+    $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
+    $description = false;
+
+    $title = __($block->getTitle());
+    $buttonTitle = __($block->getButtonTitle());
+
+    $baseHelper = $this->helper('ET\Base\Helper\Data');
+
+    $showNewLabel = $baseHelper->getConfigValue('category_section/product_labels/show_new_label');
+    $showSaleLabel = $baseHelper->getConfigValue('category_section/product_labels/show_sale_label');
+
+    $enableSlider = 1;
+    $productPerGrid = 12;
+
+    $productColumnClass = '';
+    if ($enableSlider == 1) {
+        $productColumnClass = 'slider-li';
+    } else {
+        $productColumnClass = 'six-blocks';
+    }
+    ?>
+    <style>
+        .weely-label {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 7px;
+            color: #cc6633;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            .weely-label {
+                font-size: 20px !important;
+                font-weight: 600;
+                margin-left: 20px;
+            }
+        }
+
+        .weeklylink {
+            color: #cc6633 !important;
+            font-size: 16px;
+            font-weight: 600;
+            position: absolute;
+            right: 17px;
+            top: 0;
+            z-index: 10;
+
+        }
+
+        a.weeklylink:hover {
+            color: #333 !important;
+            text-decoration: none;
+        }
+    </style>
+    <div class="block widget slider-data-data block-products-list widget-products-section <?php if ($enableSlider == 1) { ?> slider-enabled <?php } ?> <?=/* @noEscape */ $mode ?>">
+        <div style="position: relative;">
+            <?php if ($block->getTitle()) : ?>
+                <!-- <div class="section-title">
+                <span><?= htmlspecialchars_decode($title) ?></span>
+            </div> -->
+                <h2 class="weely-label"><?= htmlspecialchars_decode($title) ?></span>
+                <?php endif ?>
+                <?php if ($block->getButtonTitle()) : ?>
+                    <a class="weeklylink" href="<?= $block->getDetailUrl() ?>" target="">
+                        <?= htmlspecialchars_decode($buttonTitle) ?>
+                    </a>
+                <?php endif ?>
+        </div>
+
+        <div class="block-content weekly-grid-custom">
+            <?=/* @noEscape */ '<!-- ' . $image . '-->' ?>
+            <div class="products-<?=/* @noEscape */ $mode ?> <?=/* @noEscape */ $mode ?>">
+                <div class="list-row">
+                    <ol class="product-items custom-weekly-promo <?=/* @noEscape */ $type ?> ">
+                        <?php $index = 0; ?>
+                        <?php foreach ($items as $_item) : ?>
+                            <?php $index++; ?>
+                            <?php if ($index <= $productPerGrid) : ?>
+                                <li class="product-li six-blocks">
+                                    <div class="product-item-info addto-in">
+
+                                        <?php $discountHelper = $this->helper(MIT\Discount\Helper\DiscountHelper::class);
+                                        $discountData = $discountHelper->getLabelInfo($_item->getId()); ?>
+                                        <?php if (count($discountData) > 0) : ?>
+                                            <div class="custom-ds-lbl <?= $discountData['main_class'] ?>">
+                                                <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>">
+                                                    <?php if ($discountData['style']) : ?>
+                                                        <img class="discount-img" src="<?= $discountData['imgPath'] ?>" style="<?= $discountData['style'] ?>">
+                                                    <?php else : ?>
+                                                        <img class="discount-img" src="<?= $discountData['imgPath'] ?>">
+                                                    <?php endif; ?>
+                                                    <?php if ($discountData['label_styles']) : ?>
+                                                        <span class="discount-txt <?= $discountData['sub_class'] ?>" style="<?= $discountData['label_styles'] ?>"><?= $discountData['label'] ?></span>
+                                                    <?php else : ?>
+                                                        <span class="discount-txt <?= $discountData['sub_class'] ?>"><?= $discountData['label'] ?></span>
+                                                    <?php endif; ?>
+                                                </a>
+                                            </div>
+                                        <?php endif; ?>
+
+                                        <div class="pro-img">
+                                            <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product photo product-item-photo">
+                                                <?= $block->getImage($_item, $image)->toHtml() ?>
+                                            </a>
+
+                                            <?php if ($this->helper(\MIT\WeeklyPromo\Helper\PromoRetriever::class)->isFreeShipping([$_item->getId()])) : ?>
+                                                <div class="free-shipping-cls">
+                                                    <img class="free-shipping-img" src="<?= $this->helper(\MIT\WeeklyPromo\Helper\PromoRetriever::class)->getFreeShippingImgPath()  ?>">
+                                                </div>
+                                            <?php endif; ?>
+
+                                            <?php
+                                            if ($showNewLabel == 1) {
+                                                $fromDate = $_item->getNewsFromDate();
+                                                $toDate = $_item->getNewsToDate();
+
+                                                if (isset($fromDate) && isset($toDate)) {
+                                                    $fromDate = strtotime($fromDate);
+                                                    $toDate = strtotime($toDate);
+                                                    $now = strtotime(date("Y-m-d h:m:s"));
+
+                                                    if ($fromDate <= $now && $now <= $toDate) {
+                                            ?>
+                                                        <span class="new-label"><?php echo __('New'); ?></span>
+                                                        <?php
+                                                    }
+                                                }
+                                            }
+
+                                            if ($showSaleLabel == 1) {
+                                                $special_price = number_format($_item->getSpecialPrice(), 2);
+                                                $regular_price = number_format($_item->getPrice(), 2);
+                                                if (isset($special_price) && $special_price > 0) {
+                                                    if ($special_price < $regular_price) {
+                                                        $fromSpecialDate = $_item->getSpecialFromDate();
+                                                        $toSpecialDate = $_item->getSpecialToDate();
+
+                                                        if (isset($fromSpecialDate) && isset($toSpecialDate)) {
+                                                            $fromSpecialDate = strtotime($fromSpecialDate);
+                                                            $toSpecialDate = strtotime($toSpecialDate);
+                                                            $now = strtotime(date("Y-m-d h:m:s"));
+
+                                                            if ($fromSpecialDate <= $now && $now <= $toSpecialDate) {
+                                                        ?>
+                                                                <span class="sale-label"><?php echo __('Sale'); ?></span>
+                                            <?php
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            ?>
+                                        </div>
+                                        <div class="product-item-details">
+                                            <strong class="product-item-name">
+                                                <a title="<?= $block->escapeHtmlAttr($_item->getName()) ?>" href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>" class="product-item-link">
+                                                    <?= $block->escapeHtml($_item->getName()) ?>
+                                                </a>
+                                            </strong>
+                                            <?php if ($templateType) : ?>
+                                                <?= $block->getReviewsSummaryHtml($_item, $templateType) ?>
+                                            <?php endif; ?>
+
+                                            <?= $block->getProductPriceHtml($_item, $type) ?>
+
+                                            <?php if ($_item->isAvailable()) : ?>
+                                                <?= $block->getProductDetailsHtml($_item) ?>
+                                            <?php endif; ?>
+
+                                            <?php if ($_item->getTypeId() != 'configurable') : ?>
+                                                <div class="empty-variants"></div>
+                                            <?php endif; ?>
+
+                                            <?php if ($showWishlist || $showCompare || $showCart) : ?>
+                                                <div class="product-item-inner">
+                                                    <div class="product-item-actions">
+                                                        <?php if ($showCart) : ?>
+                                                            <div class="actions-primary">
+                                                                <?php if ($_item->isSaleable()) : ?>
+                                                                    <?php $postParams = $block->getAddToCartPostParams($_item); ?>
+                                                                    <form data-role="tocart-form" data-product-sku="<?= $block->escapeHtmlAttr($_item->getSku()) ?>" action="<?= $block->escapeUrl($postParams['action']) ?>" method="post">
+    
+                                                                        <input type="hidden" name="product" value="<?= $block->escapeHtmlAttr($postParams['data']['product']) ?>">
+                                                                        <input type="hidden" name="<?=/* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>" value="<?=/* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">
+                                                                        <?= $block->getBlockHtml('formkey') ?>
+                                                                        <?php if ($_item->getTypeId() != 'mpmembership') : ?>
+                                                                            <div class="custom-field qty">
+                                                                                <div class="control qty-change">
+                                                                                    <?php $id = "qty_" . $_item->getId() . microtime(true) . rand(100000, 999999); ?>
+                                                                                    <button type="button" class="qty-main reduced items" onclick="var result = document.getElementById('<?= $id ?>'); var qty = result.value; if( !isNaN( qty ) && qty > 1 ) result.value--;return false;">
+                                                                                        <span class="custom-qty-btn qty-inc"><i class="fa fa-minus" aria-hidden="true"></i></span>
+                                                                                    </button>
+                                                                                    <input type="number" name="qty" id="<?= $id ?>" value="1" title="<?=/* @escapeNotVerified */ __('Qty') ?>" class="input-text custom-qty" data-validate="<?= $block->escapeHtml(json_encode($this->helper(\MIT\CustCatalog\Helper\ProductHelper::class)->getQuantityValidators())) ?>" />
+                                                                                    <button type="button" class="qty-main increase items" onclick="var result = document.getElementById('<?= $id ?>'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;">
+                                                                                        <span class="custom-qty-btn qty-inc"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        <?php endif; ?>
+                                                                        <button type="submit" title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>" class="action tocart primary">
+                                                                            <span><?= $block->escapeHtml(__('Add to Cart')) ?></span>
+                                                                        </button>                                                                      
+                                                                    </form>
+                                                                <?php else : ?>
+                                                                    <?php if ($_item->getIsSalable()) : ?>
+                                                                        <div class="stock available"><span><?= $block->escapeHtml(__('In stock')) ?></span></div>
+                                                                    <?php else : ?>
+                                                                        <div class="stock unavailable"><span><?= $block->escapeHtml(__('Out of stock')) ?></span></div>
+                                                                    <?php endif; ?>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                        <?php endif; ?>
+                                                        <?php $productHelper = $this->helper(\MIT\Product\Helper\ProductHelper::class); ?>
+                                                        <?php if ($showWishlist || $showCompare) : ?>
+                                                            <div class="actions-secondary" data-role="add-to-links">
+                                                                <?php //phpcs:disable
+                                                                ?>
+                                                                <?php if ($this->helper(\Magento\Wishlist\Helper\Data::class)->isAllow() && $showWishlist) : ?>
+                                                                    <?php //phpcs:enable
+                                                                    ?>
+                                                                    <a href="#" data-post='<?=/* @noEscape */ $block->getAddToWishlistParams($_item) ?>' class="action towishlist" data-action="add-to-wishlist" title="<?= $block->escapeHtmlAttr(__('Add to Wish List')) ?>">
+                                                                        <span><?= $block->escapeHtml(__('Add to Wish List')) ?></span>
+                                                                    </a>
+                                                                <?php endif; ?>
+                                                                <?php if ($this->helper(Payment\Kbz\Helper\Data::class)->getConfig('mpsocialshare/general/enabled')) : ?>
+                                                                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style action" data-a2a-url="<?= $block->getProductUrl($_item) ?>" data-a2a-title="<?= ($_item->getName()) ?>">
+                                                                        <a class="a2a_dd" href="https://www.addtoany.com/share">
+                                                                            <svg width="23px" height="23px" viewBox="0 0 512 512" class="custom-share-icon" xmlns="http://www.w3.org/2000/svg">
+                                                                                <path fill="var(--ci-primary-color, currentColor)" d="M404,344a75.9,75.9,0,0,0-60.208,29.7L179.869,280.664a75.693,75.693,0,0,0,0-49.328L343.792,138.3a75.937,75.937,0,1,0-13.776-28.976L163.3,203.946a76,76,0,1,0,0,104.108l166.717,94.623A75.991,75.991,0,1,0,404,344Zm0-296a44,44,0,1,1-44,44A44.049,44.049,0,0,1,404,48ZM108,300a44,44,0,1,1,44-44A44.049,44.049,0,0,1,108,300ZM404,464a44,44,0,1,1,44-44A44.049,44.049,0,0,1,404,464Z" class="ci-primary" />
+                                                                            </svg>
+                                                                        </a>
+                                                                    </div>
+                                                                <?php endif; ?>
+                                                            </div>
+                                                        <?php else : ?>
+                                                            <?php if ($this->helper(Payment\Kbz\Helper\Data::class)->getConfig('mpsocialshare/general/enabled')) : ?>
+                                                                <div class="a2a_kit a2a_kit_size_32 a2a_default_style action" data-a2a-url="<?= $block->getProductUrl($_item) ?>" data-a2a-title="<?= ($_item->getName()) ?>">
+                                                                    <a class="a2a_dd" href="https://www.addtoany.com/share">
+                                                                        <svg width="23px" height="23px" viewBox="0 0 512 512" class="custom-share-icon" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fill="var(--ci-primary-color, currentColor)" d="M404,344a75.9,75.9,0,0,0-60.208,29.7L179.869,280.664a75.693,75.693,0,0,0,0-49.328L343.792,138.3a75.937,75.937,0,1,0-13.776-28.976L163.3,203.946a76,76,0,1,0,0,104.108l166.717,94.623A75.991,75.991,0,1,0,404,344Zm0-296a44,44,0,1,1-44,44A44.049,44.049,0,0,1,404,48ZM108,300a44,44,0,1,1,44-44A44.049,44.049,0,0,1,108,300ZM404,464a44,44,0,1,1,44-44A44.049,44.049,0,0,1,404,464Z" class="ci-primary" />
+                                                                        </svg>
+                                                                    </a>
+                                                                </div>
+                                                            <?php endif; ?>
+                                                        <?php endif; ?>
+                                                    </div>
+                                                </div>
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach ?>
+                    </ol>
+                </div>
+            </div>
+            <?= $block->getPagerHtml() ?>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.num_services = 4;
+        a2a_config.prioritize = ['facebook', 'viber', 'facebook_messenger', 'telegram'];
+    </script>
+
+    <?php if (!$block->isRedirectToCartEnabled()) : ?>
+        <script type="text/x-magento-init">
+            {
+                "[data-role=tocart-form], .form.map.checkout": 
+                {
+                    "catalogAddToCart": 
+                    {
+                        "product_sku": "<?= $block->escapeJs($_item->getSku()) ?>"
+                    }
+                }
+            }
+        </script>
+    <?php endif; ?>
+
+    <script type="text/x-magento-init">
+        {
+        "*": {
+            "MIT_CustCatalog/js/product-list": {}
+        }
+    }
+    </script>
+
+<?php endif; ?>

@@ -1,0 +1,219 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">mit_homeslider_homeslider_form.homeslider_form_data_source</item>
+		</item>
+		<item name="label" xsi:type="string" translate="true">General Information</item>
+		<item name="template" xsi:type="string">templates/form/collapsible</item>
+	</argument>
+	<settings>
+		<buttons>
+			<button name="back" class="MIT\HomeSlider\Block\Adminhtml\HomeSlider\Edit\BackButton"/>
+			<button name="delete" class="MIT\HomeSlider\Block\Adminhtml\HomeSlider\Edit\DeleteButton"/>
+			<button name="save" class="MIT\HomeSlider\Block\Adminhtml\HomeSlider\Edit\SaveButton"/>
+			<button name="save_and_continue" class="MIT\HomeSlider\Block\Adminhtml\HomeSlider\Edit\SaveAndContinueButton"/>
+		</buttons>
+		<namespace>mit_homeslider_homeslider_form</namespace>
+		<dataScope>data</dataScope>
+		<deps>
+			<dep>mit_homeslider_homeslider_form.homeslider_form_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="homeslider_form_data_source">
+		<argument name="data" xsi:type="array">
+			<item name="js_config" xsi:type="array">
+				<item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+			</item>
+		</argument>
+		<settings>
+			<submitUrl path="*/*/save"/>
+		</settings>
+		<dataProvider name="homeslider_form_data_source" class="MIT\HomeSlider\Model\HomeSlider\DataProvider">
+			<settings>
+				<requestFieldName>homeslider_id</requestFieldName>
+				<primaryFieldName>homeslider_id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<fieldset name="general">
+		<settings>
+			<label>General</label>
+		</settings>
+		<field name="name" formElement="textarea" sortOrder="10">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">HomeSlider</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>text</dataType>
+				<label translate="true">Home Slider Name</label>
+				<dataScope>name</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">false</rule>
+				</validation>
+			</settings>
+		</field>
+
+		  <field name="is_active" formElement="checkbox">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">HomeSlider</item>
+                    <item name="default" xsi:type="number">0</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>boolean</dataType>
+                <label translate="true">Active</label>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                        <prefer>toggle</prefer>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+		
+		<field name="website_id" formElement="multiselect">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">catalog_rule</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">true</rule>
+                </validation>
+                <dataType>number</dataType>
+                <tooltip>
+                    <link>https://docs.magento.com/user-guide/configuration/scope.html</link>
+                    <description>What is this?</description>
+                </tooltip>
+                <label translate="true">Websites</label>
+                <dataScope>website_id</dataScope>
+            </settings>
+            <formElements>
+                <multiselect>
+                    <settings>
+                        <options class="Magento\CatalogRule\Model\Rule\WebsitesOptionsProvider"/>
+                    </settings>
+                </multiselect>
+            </formElements>
+        </field>
+		<field name="home_slider_image">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">HomeSlider</item>
+                    <item name="label" xsi:type="string" translate="true">Home Slider Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                    <item name="baseTmpPath" xsi:type="string">cms/tmp</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="mit_homeslider/homeslider/upload/field/home_slider_image"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="home_slider_image_mobile">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">HomeSlider</item>
+                    <item name="label" xsi:type="string" translate="true">Home Slider Image Mobile</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                    <item name="baseTmpPath" xsi:type="string">cms/tmp</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">61</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="mit_homeslider/homeslider/upload/field/home_slider_image_mobile"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+		<!-- category_id -->
+
+		<field name="category_id">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">Magento\Catalog\Ui\Component\Product\Form\Categories\Options</item>
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Main Category</item>
+					<item name="source" xsi:type="string">HomeSlider</item>
+                    <item name="componentType" xsi:type="string">field</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="component" xsi:type="string">Magento_Catalog/js/components/new-category</item>
+                    <item name="elementTmpl" xsi:type="string">ui/grid/filters/elements/ui-select</item>
+                    <item name="dataScope" xsi:type="string">category_id</item>
+                    <item name="filterOptions" xsi:type="boolean">true</item>
+                    <item name="showCheckbox" xsi:type="boolean">true</item>
+                    <item name="disableLabel" xsi:type="boolean">true</item>
+                    <item name="multiple" xsi:type="boolean">false</item>
+                    <item name="levelsVisibility" xsi:type="number">1</item>
+                    <item name="sortOrder" xsi:type="number">70</item>
+                    <item name="required" xsi:type="boolean">true</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">false</item>
+                    </item>
+                    <item name="listens" xsi:type="array">
+                        <item name="${ $.namespace }.${ $.namespace }:responseData" xsi:type="string">setParsed</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+		<field name="is_home_slider" formElement="checkbox">
+            <settings>
+                <label translate="true">IsHomeSlider</label>
+                <tooltip>
+                    <description translate="true">This rule will show in home slider.</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>checkbox</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="is_home_slider_one" formElement="checkbox">
+            <settings>
+                <label translate="true">IsHomeSliderOne</label>
+                <tooltip>
+                    <description translate="true">This rule will show in home slider one.</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>checkbox</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+	</fieldset>
+</form>

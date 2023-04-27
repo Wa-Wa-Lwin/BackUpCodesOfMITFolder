@@ -1,0 +1,10 @@
+{
+    "customer_entity": {
+        "column": {
+            "otp_expired_date": true,
+            "otp_wrong_count": true,
+            "confirm_otp_resend_count": true,
+            "confirm_mail_send_count": true
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MIT_Customer::css/account-login.css"/>
+    </head>
+    <body>
+        <referenceBlock name="customer_form_login">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">MIT_Customer::form/login.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="form.additional.info">
+            <block class="MIT\Customer\Block\Form\AccountConfirmPopup" name="account_confirmation_message_popup" template="MIT_Customer::confirmMessagePopup.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

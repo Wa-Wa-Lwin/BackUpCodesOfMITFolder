@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/customguest-carts/:cartId/payment-information" method="POST">
+        <service class="MIT\Checkout\Api\GuestPaymentInformationInterface" method="savePaymentInfoAndPlaceOrder"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/customcarts/mine/payment-information" method="POST">
+        <service class="MIT\Checkout\Api\PaymentInformationInterface" method="savePaymentInfoAndPlaceOrder"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/carts/mine/payment-method" method="POST">
+        <service class="MIT\Checkout\Api\PaymentInformationInterface" method="getPaymentMethodList"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/carts/mine/repayment" method="POST">
+        <service class="MIT\Checkout\Api\PaymentInformationInterface" method="repayOrder"/>
+       <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+</routes>

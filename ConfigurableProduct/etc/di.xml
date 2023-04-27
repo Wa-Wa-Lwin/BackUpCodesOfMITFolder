@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Magento\ConfigurableProduct\Ui\DataProvider\Product\Form\Modifier\ConfigurablePanel" type="MIT\ConfigurableProduct\Ui\DataProvider\Product\Form\Modifier\ConfigurablePanel" />
+	<preference for="Magento\ConfigurableProduct\Ui\DataProvider\Product\Form\Modifier\Data\AssociatedProducts" type="MIT\ConfigurableProduct\Ui\DataProvider\Product\Form\Modifier\Data\AssociatedProducts" />
+	<type name="Magento\Catalog\Controller\Adminhtml\Product\Initialization\Helper">
+		<plugin name="configurable" disabled="true" />
+		<plugin name="updateConfigurations" disabled="true" />
+        <plugin name="MIT_ConfigurableProduct_configurable" type="MIT\ConfigurableProduct\Controller\Adminhtml\Product\Initialization\Helper\Plugin\CustomConfigurable" sortOrder="50" />
+        <plugin name="MIT_ConfigurableProduct_updateConfigurations" type="MIT\ConfigurableProduct\Controller\Adminhtml\Product\Initialization\Helper\Plugin\CustomUpdateConfigurations" sortOrder="60" />
+    </type>
+	<type name="Magento\ConfigurableProduct\Ui\Component\Listing\AssociatedProduct\Columns\Name">
+		<plugin name="MIT_ConfigurableProduct_Plugin_Magento_ConfigurableProduct_Ui_Component_Listing_AssociatedProduct_Columns_Name" type="MIT\ConfigurableProduct\Plugin\Magento\ConfigurableProduct\Ui\Component\Listing\AssociatedProduct\Columns\Name" sortOrder="10" disabled="false"/>
+	</type>
+</config>

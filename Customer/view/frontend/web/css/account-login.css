@@ -1,0 +1,109 @@
+.account-social-login .actions-toolbar.social-btn {
+    width: 40% !important;
+    display: block;
+    margin-top: 0px !important;
+    float: left;
+}
+
+.block.social-login-authentication-channel.account-social-login {
+    width: 100% !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+a.btn.btn-block.btn-social.btn-google {
+    margin-right: 0;
+}
+
+@media only screen and (max-width: 767px) {
+    .account-social-login .actions-toolbar.social-btn {
+        width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .actions-toolbar.social-btn.social-btn-actions-toolbar.facebook-login {
+        margin-top: 0px !important;
+    }
+    .actions-toolbar.social-btn.social-btn-actions-toolbar.google-login {
+        margin: 10px 0 10px 0 !important;
+    }
+    a.btn.btn-block.btn-social.btn-google,
+    a.btn.btn-block.btn-social.btn-facebook {
+        margin-right: 0 !important;
+    }
+    .login-policy {
+        width: 100% !important;
+    }
+}
+
+.block.social-login-authentication-channel.account-social-login {
+    display: none;
+}
+
+.login-policy {
+    width: 80%;
+    display: flex !important;
+    padding-top: 1rem !important;
+}
+
+.block.social-login-authentication-channel.account-social-login .block-content {
+    text-align: left !important;
+}
+
+a.btn.btn-block.btn-social.btn-facebook {
+    margin-right: 10px !important;
+}
+
+
+/* account confirm popup modal css */
+
+aside.modal-popup.acount-confirmed-modal .modal-inner-wrap {
+    max-width: 350px;
+    width: 350px;
+    min-width: 350px;
+    border-radius: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+aside.modal-popup.acount-confirmed-modal .modal-inner-wrap footer.modal-footer {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    text-align: center !important;
+}
+
+aside.modal-popup.acount-confirmed-modal .modal-inner-wrap header.modal-header {
+    display: none;
+}
+
+aside.modal-popup.acount-confirmed-modal .modal-inner-wrap .modal-body-content {
+    line-height: 2.5rem;
+}
+
+aside.modal-popup.acount-confirmed-modal .modal-inner-wrap .modal-content {
+    margin-top: 2.6rem;
+}
+
+aside.modal-popup.acount-confirmed-modal .modal-inner-wrap footer.modal-footer button {
+    width: 80px;
+    background-color: #cc6633 !important;
+}
+
+@media only screen and (max-width: 767px) {
+    aside.modal-popup.acount-confirmed-modal .modal-inner-wrap {
+        height: auto !important;
+        min-height: auto !important;
+        width: 84% !important;
+        max-width: 84% !important;
+        min-width: 84% !important;
+        margin: 100px 8% 0 8%;
+    }
+    aside.modal-popup.acount-confirmed-modal {
+        left: 0;
+    }
+    aside.modal-popup.acount-confirmed-modal .modal-inner-wrap footer.modal-footer {
+        border-top: 1px solid #c1c1c1;
+    }
+}
+
+
+/* end of account confirm popup modal css */

@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+    </head>
+    <body>
+        <!-- <move element="catalog.topnav" destination="sidebar.main" /> -->
+        <!-- <move element="navigation.sections" destination="page.top" after="breadcrumbs" /> -->
+        <referenceContainer name="page.top">
+            <!-- <block class="Magento\Theme\Block\Html\Topmenu" name="cuscatalog.topnav" template="MIT_Navigation::html/custommenu.phtml" after="breadcrumbs"/> -->
+            <block class="Magento\Framework\View\Element\Template" name="cusnavigation.sections" after="breadcrumbs" template="Magento_Theme::html/sections.phtml">
+                <arguments>
+                    <argument name="group_name" xsi:type="string">cus-navigation-sections</argument>
+                    <argument name="group_css" xsi:type="string">cus-nav-sections</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Template" name="cusstore.menu" group="cus-navigation-sections" template="Magento_Theme::html/container.phtml">
+                    <!-- <arguments>
+                        <argument name="title" translate="true" xsi:type="string">Menu</argument>
+                    </arguments> -->
+                   <!-- <block class="MIT\Navigation\Block\Html\Custommenu" name="cuscatalog.topnav" template="MIT_Navigation::html/custommenu.phtml" after="breadcrumbs"/> -->
+                </block>
+            </block>
+        </referenceContainer>
+
+        <referenceBlock name="page.main.title">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">MIT_Navigation::html/title.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

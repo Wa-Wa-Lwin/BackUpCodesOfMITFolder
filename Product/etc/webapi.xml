@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/recentlyviewed/products" method="GET">
+        <service class="MIT\Product\Api\CustomRecentlyViewedProductInterface" method="getRecentlyViewedProductList"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/recentlyviewed/products" method="POST">
+        <service class="MIT\Product\Api\CustomRecentlyViewedProductInterface" method="setRecentlyViewedProduct"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/compared/products" method="GET">
+        <service class="MIT\Product\Api\CustomComparedProductInterface" method="getComparedProductList"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/compared/products" method="POST">
+        <service class="MIT\Product\Api\CustomComparedProductInterface" method="setComparedProduct"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/compared/products/:id" method="DELETE">
+        <service class="MIT\Product\Api\CustomComparedProductInterface" method="deleteComparedProductById"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/customcatalog/:id" method="GET">
+        <service class="MIT\Product\Api\CustomCategoryInterface" method="getCategoryById"/>
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+    <route url="/V1/bestseller/products" method="GET">
+        <service class="MIT\Product\Api\CustomBestSellerInterface" method="getBestSellerProductList"/>
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+    <route url="/V1/customproducts/:id" method="GET">
+        <service class="MIT\Product\Api\CustomProductInterface" method="getProductDetailBySku"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+    <route url="/V1/categorylist/homepage" method="GET">
+        <service class="MIT\Product\Api\CustomCategoryInterface" method="getCategoryListForHomePage"/>
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+    <route url="/V1/custom/collections" method="GET">
+        <service class="MIT\Product\Api\CustomCollectionsInterface" method="getList"/>
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+    <route url="/V1/custom/homeslider/:type" method="GET">
+        <service class="MIT\Product\Api\HomeSliderInterface" method="getHomeSlider"/>
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+    <route url="/V1/customproducts" method="GET">
+        <service class="MIT\Product\Api\CustomProductInterface" method="getList"/>
+        <resources>
+            <resource ref="Magento_Catalog::products" />
+        </resources>
+    </route>
+    <route url="/V1/rating" method="GET">
+        <service class="MIT\Product\Api\CustomRatingAndReviewInterface" method="getRatingList"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/review" method="POST">
+        <service class="MIT\Product\Api\CustomRatingAndReviewInterface" method="submitReview"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/refund/config" method="GET">
+        <service class="MIT\Product\Api\CustomRefundRequestInterface" method="getConfig"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/refund" method="POST">
+        <service class="MIT\Product\Api\CustomRefundRequestInterface" method="submitRefundRequest"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/customcatalog/layer/navigation/:categoryId" method="GET">
+        <service class="MIT\Product\Api\CustomLayerNavigationInterface" method="getLayerNavigationByCategoryId"/>
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+    <route url="/V1/customcatalog/layer/navigation/:categoryId" method="POST">
+        <service class="MIT\Product\Api\CustomLayerNavigationInterface" method="getLayerNavigationByCategoryIdAndActivFilters"/>
+        <resources>
+            <resource ref="Magento_Catalog::categories" />
+        </resources>
+    </route>
+    <route url="/V1/mine/product/reviews" method="GET">
+        <service class="MIT\Product\Api\CustomRatingAndReviewInterface" method="getProductReviewListByCustomerId"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/mine/product/reviews/:reviewId" method="GET">
+        <service class="MIT\Product\Api\CustomRatingAndReviewInterface" method="getReviewByIdAndCustomerId"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/mine/product/downloadable" method="GET">
+        <service class="MIT\Product\Api\CustomerDownloadableProductInterface" method="getDownloadableProductList"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/customproducts/new" method="GET">
+        <service class="MIT\Product\Api\CustomNewProductInterface" method="getNewProductList"/>
+        <resources>
+            <resource ref="Magento_Catalog::products"/>
+        </resources>
+    </route>
+</routes>

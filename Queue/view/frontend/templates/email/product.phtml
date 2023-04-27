@@ -1,0 +1,65 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \MIT\Queue\Block\Email\Product $block */
+?>
+<?php if ($exist = ($block->getProductCollection() && $block->getProductCollection()->getSize())) : ?>
+    <?php $l = $block->getProductCollection()->getSize() ?>
+    <?php $helper = $this->helper('Magento\Framework\Pricing\Helper\Data');?>
+    <div>
+        <table>
+            <tr>
+                <?php $i = 0;
+                foreach ($block->getProductCollection() as $item) : $i++ ?>
+                    <td class="col product">
+                        <p>
+                            <a href="<?= $block->escapeUrl($block->getProductUrl($item)) ?>">
+                                <?= /* @noEscape */ $block->getImage($item, 'product_small_image')->toHtml() ?>
+                            </a>
+                        </p>
+
+                        <p style="width: 200px;">
+                            <a href="<?= $block->escapeUrl($block->getProductUrl($item)) ?>">
+                                <strong style="line-height: 1.6rem;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                                display: -webkit-box;
+                                -webkit-line-clamp: 2;
+                                -webkit-box-orient: vertical;"><?= $block->escapeHtml($item->getName()) ?></strong>
+                            </a>
+                        </p>
+                        <?php $priceData = $block->getProductPriceData($item) ?>
+                        <?php if ($priceData['special'] > 0): ?>
+                            <p><span style="font-size: 16px;color: orange;font-weight: 600"><?= /** @noEscape */ $block->formatPrice($priceData['special']) ?></span></p>
+                        <?php endif; ?>
+                        <?php if ($priceData['regular'] > 0 && $priceData['special'] > 0): ?>
+                            <p><span style="font-size: 14px;color: #555555;font-weight: 600;text-decoration: line-through;"><?= /** @noEscape */ $block->formatPrice($priceData['regular']) ?></span></p>
+                        <?php elseif ($priceData['regular'] > 0): ?>
+                            <p><span style="font-size: 14px;color: #555555;font-weight: 600;"><?= /** @noEscape */ $block->formatPrice($priceData['regular']) ?></span></p>
+                        <?php endif; ?>
+                       
+                        <p>
+                            <a href="<?= $block->escapeUrl($block->getProductUrl($item)) ?>">
+                                <?= $block->escapeHtml(__('View Product')) ?>
+                            </a>
+                        </p>
+                    </td>
+                    <?php if ($i % 3 != 0) : ?>
+                        <td></td>
+                    <?php else : ?>
+            </tr>
+            <tr>
+                <td colspan="5">&nbsp;</td>
+            </tr>
+            <?php if ($i < $l) : ?>
+                <tr>
+                <?php endif ?>
+            <?php endif ?>
+        <?php endforeach ?>
+        </table>
+    </div>
+<?php endif; ?>

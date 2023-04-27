@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="adminhtml_controller_salesrule_after_save_custom">
+		<observer name="mit_salesrulelabel_observer_adminhtml_controllersaleruleaftersavecustom_adminhtml_controller_salerule_after_save_custom" instance="MIT\SalesRuleLabel\Observer\Adminhtml\ControllerSaleruleAfterSaveCustom"/>
+	</event>
+    <event name="adminhtml_controller_salesrule_after_delete_custom">
+		<observer name="mit_salesrulelabel_observer_adminhtml_controllersaleruleafterdeletecustom_adminhtml_controller_salerule_after_delete_custom" instance="MIT\SalesRuleLabel\Observer\Adminhtml\ControllerSaleruleAfterDeleteCustom"/>
+	</event>
+	<event name="adminhtml_controller_salesrulelabel_after_save_custom">
+		<observer name="mit_salesrulelabel_observer_adminhtml_controllersalerulelabelaftersave" instance="MIT\SalesRuleLabel\Observer\Adminhtml\ControllerSaleruleLabelAfterSaveCustom"/>
+	</event>
+</config>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <fieldset name="rule_information" sortOrder="10">
+        <!-- <field name="width" formElement="input" sortOrder="97">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">page</item>
+					<item name="component" xsi:type="string">MIT_Discount/js/form/element/img-width-change</item>
+					<item name="formElement" xsi:type="string">input</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>number</dataType>
+				<label translate="true">Width (px)</label>
+				<dataScope>width</dataScope>
+				<elementTmpl>ui/form/element/input</elementTmpl>
+				<validation>
+				    <rule name="validate-number" xsi:type="boolean">true</rule>
+					<rule name="validate-zero-or-greater" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+        <field name="height" formElement="input" sortOrder="98">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">page</item>
+					<item name="component" xsi:type="string">MIT_Discount/js/form/element/img-height-change</item>
+					<item name="formElement" xsi:type="string">input</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>number</dataType>
+				<label translate="true">Height (px)</label>
+				<dataScope>height</dataScope>
+				<elementTmpl>ui/form/element/input</elementTmpl>
+				<validation>
+					<rule name="validate-number" xsi:type="boolean">true</rule>
+					<rule name="validate-zero-or-greater" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+        <field name="discount_image_id" sortOrder="100">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">MIT\Discount\Model\DiscountImageDropDown</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Image Type</item>
+                    <item name="component" xsi:type="string">MIT_Discount/js/form/element/select-discount-image-salerule</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="dataScope" xsi:type="string">discount_image_id</item>
+                    <item name="default" xsi:type="string">-1</item>
+                </item>
+            </argument>
+        </field>
+        <field name="discount_label" formElement="input" sortOrder="99">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">page</item>
+                    <item name="component" xsi:type="string">MIT_Discount/js/form/element/discount-label</item>
+                     <item name="formElement" xsi:type="string">input</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>string</dataType>
+				<label translate="true">Discount Label</label>
+				<dataScope>discount_label</dataScope>
+                <elementTmpl>ui/form/element/input</elementTmpl>
+			</settings>
+		</field> -->
+		<field name="rule_name_mm" formElement="input" sortOrder="2">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="source" xsi:type="string">sales_rule</item>
+                </item>
+            </argument>
+            <settings>
+                <validation>
+                    <rule name="required-entry" xsi:type="boolean">false</rule>
+                </validation>
+                <dataType>text</dataType>
+                <label translate="true">Rule Name(MM)</label>
+                <visible>true</visible>
+                <dataScope>rule_name_mm</dataScope>
+            </settings>
+        </field>
+    </fieldset>
+</form>

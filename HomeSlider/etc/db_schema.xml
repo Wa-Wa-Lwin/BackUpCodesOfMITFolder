@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="mit_homeslider_homeslider" resource="default" engine="innodb" comment="mit_homeslider_homeslider Table">
+		<column xsi:type="int" name="homeslider_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="homeslider_id"/>
+		</constraint>
+		<column name="name" nullable="true" xsi:type="text" comment="Home Slider Name"/>
+		<column xsi:type="smallint" name="is_active" unsigned="false" nullable="false" identity="false"
+                default="0" comment="Is Active"/>
+        <column xsi:type="smallint" name="website_id" unsigned="true" nullable="false" identity="false"
+                comment="Website ID"/>
+		<column xsi:type="text" name="home_slider_image" nullable="true"/>
+		<column xsi:type="text" name="home_slider_image_mobile" nullable="true"/>
+		<column xsi:type="smallint" name="category_id" unsigned="false" nullable="false" identity="false"
+                default="0" comment="Category Id"/>
+		<column xsi:type="smallint" name="is_home_slider" unsigned="false" nullable="false" identity="false"
+                default="0" comment="Is Home Slider"/>
+		<column xsi:type="smallint" name="is_home_slider_one" unsigned="false" nullable="false" identity="false"
+                default="0" comment="Is Home Slider One"/>
+		
+		 <constraint xsi:type="foreign" referenceId="CATALOGRULE_WEBSITE_WEBSITE_ID_STORE_WEBSITE_WEBSITE_ID"
+                    table="catalogrule_website" column="website_id" referenceTable="store_website"
+                    referenceColumn="website_id" onDelete="CASCADE"/>
+        <index referenceId="CATALOGRULE_WEBSITE_WEBSITE_ID" indexType="btree">
+            <column name="website_id"/>
+        </index>
+	</table>
+</schema>

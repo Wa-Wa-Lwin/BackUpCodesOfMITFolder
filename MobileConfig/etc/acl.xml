@@ -1,0 +1,7 @@
+<acl>
+    <resources>
+        <resource id="Magento_Backend::admin">
+            <resource id="MIT_MobileConfig::config" title="Mobile Configuration" sortOrder="10"/>
+        </resource>
+    </resources>
+</acl>

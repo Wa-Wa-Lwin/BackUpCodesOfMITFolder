@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="MIT_Customer::css/account-create.css"/>
+    </head>
+    <body>
+        <referenceBlock name="customer_form_register">
+            <arguments>
+                <argument name="show_address_fields" xsi:type="boolean">true</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="customer_form_register">
+            <action method="setTemplate">
+                <argument name="template" xsi:type="string">MIT_Customer::form/register.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="form.additional.info">
+            <block class="MIT\Customer\Block\Form\TermsAndConditions" name="terms_condition_custom" template="MIT_Customer::termsAndConditions.phtml"/>
+        </referenceContainer>
+    </body>
+</page>

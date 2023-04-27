@@ -1,0 +1,12 @@
+<?php
+
+/** @var $block \MIT\Integration\Block\Adminhtml\System\Config\Button */
+?>
+
+<div class="pp-buttons-container">
+    <p>
+        <button id="<?php echo $block->getHtmlId() ?>" onclick="setLocation('<?php /* @escapeNotVerified */ echo $block->getSendUrl() ?>')" type="button">
+            <?php /* @escapeNotVerified */ echo __('Import Stock') ?>
+        </button>
+    </p>
+</div>

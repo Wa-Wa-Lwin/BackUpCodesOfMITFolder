@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+   <body>
+      <referenceContainer name="content">
+         <referenceBlock name="checkout.root">
+            <arguments>
+               <argument name="jsLayout" xsi:type="array">
+                  <item name="components" xsi:type="array">
+                     <item name="checkout" xsi:type="array">
+                        <item name="children" xsi:type="array">
+                           <item name="authentication" xsi:type="array">
+                              <item name="component" xsi:type="string">MIT_Customer/js/view/authentication</item>
+                           </item>
+                           <item name="steps" xsi:type="array">
+                              <item name="children" xsi:type="array">
+                                 <item name="shipping-step" xsi:type="array">
+                                    <item name="children" xsi:type="array">
+                                       <item name="shippingAddress" xsi:type="array">
+                                          <item name="children" xsi:type="array">
+                                             <item name="customer-email" xsi:type="array">
+                                                <item name="component" xsi:type="string">
+                                                   MIT_Customer/js/view/form/element/email
+                                                   <!--  <- you can change component here -->
+                                                </item>
+                                                <item name="tooltip" xsi:type="array">
+                                                   <item name="description" xsi:type="string" translate="true">
+                                                      <!--  <- you can change text here -->
+                                                      We'll send your order
+                                                                        confirmation here.
+                                                   </item>
+                                                </item>
+                                             </item>
+                                          </item>
+                                       </item>
+                                    </item>
+                                 </item>
+                              </item>
+                           </item>
+                        </item>
+                     </item>
+                  </item>
+               </argument>
+            </arguments>
+         </referenceBlock>
+      </referenceContainer>
+   </body>
+</page>

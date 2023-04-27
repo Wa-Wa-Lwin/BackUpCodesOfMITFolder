@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="MIT\HomePagePopup\Api\PopupImageRepositoryInterface" type="MIT\HomePagePopup\Model\PopupImageRepository"/>
+    <preference for="MIT\HomePagePopup\Api\Data\PopupImageInterface" type="MIT\HomePagePopup\Model\Data\PopupImage"/>
+    <preference for="MIT\HomePagePopup\Api\Data\PopupImageManagementInterface" type="MIT\HomePagePopup\Model\Data\PopupImageManagement"/>
+    <preference for="MIT\HomePagePopup\Api\Data\PopupImageSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <virtualType name="HomePagePopupDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">MIT\HomePagePopup\Model\Resource\PopupImage\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">HomePagePopupDataGridFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="HomePagePopupImageUploader" type="MIT\HomePagePopup\Model\Uploader">
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="const">MIT\HomePagePopup\Model\Uploader::IMAGE_TMP_PATH</argument>
+            <argument name="basePath" xsi:type="const">MIT\HomePagePopup\Model\Uploader::IMAGE_PATH</argument>
+            <argument name="allowedExtensions" xsi:type="array">
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="MIT\MyGrid\PopupImage\Model\ResourceModel\ImageGrid\PopupImage\Grid\PopupImage" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">mit_homepagepopup_images</argument>
+            <argument name="resourceModel" xsi:type="string">MIT\HomePagePopup\Model\ResourceModel\PopupImage\Collection</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mit_homepagepopup_popupimage_listing_data_source" xsi:type="string">MIT\MyGrid\PopupImage\Model\ResourceModel\ImageGrid\PopupImage\Grid\PopupImage</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MIT\HomePagePopup\Model\UploaderPool">
+        <arguments>
+            <argument name="uploaders" xsi:type="array">
+                <item name="image" xsi:type="string">HomePagePopupImageUploader</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="MIT\HomePagePopup\Controller\Adminhtml\PopupImage\Upload">
+        <arguments>
+            <argument name="uploader" xsi:type="object">HomePagePopupImageUploader</argument>
+        </arguments>
+    </type>
+    <type name="MIT\HomePagePopup\Ui\Component\Listing\Column\ImagePreview">
+        <arguments>
+            <argument name="imageModel" xsi:type="object">HomePagePopupImageUploader</argument>
+        </arguments>
+    </type>
+    <type name="MIT\HomePagePopup\Controller\Adminhtml\PopupImage\MassDelete">
+        <arguments>
+            <argument name="successMessage" xsi:type="string" translate="true">A total of %1 record(s) have been deleted.</argument>
+            <argument name="errorMessage" xsi:type="string" translate="true">An error occurred while deleting record(s).</argument>
+        </arguments>
+    </type>
+</config>

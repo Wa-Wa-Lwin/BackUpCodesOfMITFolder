@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/captcha/status/:type" method="GET">
+        <service class="MIT\Customer\Api\CustomerCaptchaInterface" method="getCaptchaFlag"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/newsletter/status" method="GET">
+        <service class="MIT\Customer\Api\CustomerCaptchaInterface" method="getNewsLetterFlag"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/remoteshoppingassistance/status" method="GET">
+        <service class="MIT\Customer\Api\CustomerCaptchaInterface" method="getAllowRemoteShoppingAssistance"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/customer/password" method="PUT">
+        <service class="MIT\Customer\Api\CustomAccountManagementInterface" method="initiatePasswordReset"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/customer/config" method="GET">
+        <service class="MIT\Customer\Api\CustomAccountManagementInterface" method="getAccountConfig"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/customer/activate" method="PUT">
+        <service class="MIT\Customer\Api\CustomAccountManagementInterface" method="activateAccountByOtpCode"/>
+        <resources>
+            <resource ref="Magento_Customer::manage"/>
+        </resources>
+    </route>
+    <route url="/V1/customer/confirm/resendOtp" method="PUT">
+        <service class="MIT\Customer\Api\CustomAccountManagementInterface" method="sendConfirmEmailWithOtp"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+     <route url="/V1/customers/resetPassword" method="POST">
+        <service class="MIT\Customer\Api\CustomAccountManagementInterface" method="resetPassword"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+    <route url="/V1/customer/resetPassword/resendOtp" method="PUT">
+        <service class="MIT\Customer\Api\CustomAccountManagementInterface" method="resetPasswordSendOtp"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
+</routes>

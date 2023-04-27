@@ -1,0 +1,74 @@
+.block.social-login-authentication-channel.account-social-login {
+    margin-top: 20px;
+}
+
+.login-policy {
+    display: inline-block;
+    margin-bottom: 1rem;
+    width: 600px;
+}
+
+@media only screen and (max-width: 767px) {
+    .login-policy {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+}
+
+.account-social-login .actions-toolbar.social-btn {
+    width: 25.5% !important;
+    display: block;
+    margin-top: 0 !important;
+    margin-bottom: 10px !important;
+    float: left;
+    min-width: 300px;
+}
+
+@media only screen and (max-width: 767px) {
+    .account-social-login .actions-toolbar.social-btn {
+        width: 100% !important;
+        margin-top: 0 !important;
+        margin-bottom: 0 !important;
+    }
+    .actions-toolbar.social-btn.social-btn-actions-toolbar.facebook-login {
+        margin-top: 10px !important;
+    }
+    .actions-toolbar.social-btn.social-btn-actions-toolbar.google-login {
+        margin: 10px 0 10px 0 !important;
+    }
+    a.btn.btn-block.btn-social.btn-google,
+    a.btn.btn-block.btn-social.btn-facebook {
+        margin-right: 0 !important;
+    }
+}
+
+.block.social-login-authentication-channel.account-social-login {
+    width: 100% !important;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a.btn.btn-block.btn-social.btn-google {
+    margin-right: 0;
+}
+
+.block.social-login-authentication-channel.account-social-login .block-content {
+    display: inline-block;
+    width: 100%;
+}
+
+.register-choice {
+    padding-bottom: 0.5rem;
+}
+
+.block.social-login-authentication-channel.account-social-login .block-content {
+    text-align: left !important;
+}
+
+a.btn.btn-block.btn-social.btn-facebook {
+    margin-right: 10px !important;
+}
+
+.field.field-name-lastname {
+    display: none;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="MIT_HomeSlider::mit_homeslider_homeslider" title="HomeSliders" translate="title"
+		module="MIT_HomeSlider" sortOrder="99" resource="Magento_Backend::content" parent="Magento_Backend::content_elements" 
+		action="mit_homeslider/homeslider/index"/>
+	</menu>
+</config>

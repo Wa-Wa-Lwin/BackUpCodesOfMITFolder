@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MIT_Delivery::delivery" title="Delivery" module="MIT_Delivery" sortOrder="10"
+             resource="Magento_Backend::content"/>
+
+        <add id="MIT_Delivery::delivery_list" title="Delivery Cost" module="MIT_Delivery" sortOrder="10"
+             parent="MIT_Delivery::delivery" action="custom_delivery/index/grid"
+             resource="MIT_Delivery::delivery_list"/>
+    </menu>
+</config>

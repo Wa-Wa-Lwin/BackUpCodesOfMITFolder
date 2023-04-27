@@ -1,0 +1,125 @@
+<?php
+
+
+use MIT\Navigation\Block\Widget\CustomMenu;
+
+/** @var CustomMenu $block */
+$menuList = $block->getMenuList();
+$menu_count = 1;
+$child_count = 1;
+$grandChild_count = 1;
+$grandGrandChild_count = 1;
+?>
+
+<nav class="navigation" data-action="navigation">
+    <ul class="main-menu" id="custom-main-menu">
+        <?php foreach ($menuList as $menu) : ?>
+            <?php if ($menu->getProductCount() > 0 || $menu->getChildrenData()) :  ?>
+                <li class="menu-level-1-<?php echo $menu_count; ?> cus-parent-menu"><a class="cus-menu-link <?php echo ($menu->getChildrenData() ? 'child-exist' : 'no-child'); ?>" href="<?= $block->escapeHtml(__($menu->getUrl())) ?>">
+                        <div class="cus-menu-txt"><?= $block->escapeHtml(__($menu->getName())) ?></div>
+
+                    </a>
+                    <?php if ($menu->getChildrenData()) : ?>
+                        <div class="menu-list-level-2 menu-list-level-2-<?php echo $menu_count; ?>" style="grid-template-columns: <?php echo $block->getGridCls(count($menu->getChildrenData())) ?>">
+			    <?php foreach ($menu->getChildrenData() as $child) : ?>
+				<?php $grandChild_count = 1; ?>
+                                <div class="menu-child menu-child-level-2-<?php echo $child_count; ?>">
+                                    <div class="menu-txt">
+                                        <a class="child-menu-header-link" href="<?= $block->escapeHtml(__($child->getUrl())) ?>">
+                                            <div class="cus-menu-header" style="color: #000000; font-weight: bold;"><?= $block->escapeHtml(__($child->getName())) ?></div>
+                                        </a>
+                                    </div>
+                                    <?php foreach ($child->getChildrenData() as $grandChild) : ?>
+                                        <ul style="padding: 0 !important;">
+                                            <li class="menu-level-2-<?php echo $menu_count; ?>-<?php echo $grandChild_count; ?> cus-child-menu">
+                                                <a class="child-menu-link <?php echo ($grandChild->getChildrenData() ? 'child-exist' : 'no-child'); ?>" href="<?= $block->escapeHtml(__($grandChild->getUrl())) ?>">
+                                                    <div class="cus-menu-txt"><?= $block->escapeHtml(__($grandChild->getName())) ?></div>
+                                                </a>
+
+
+                                                <?php if ($grandChild->getChildrenData()) : ?>
+                                                    <div class="arrow-left arrow-level-3-<?php echo $menu_count; ?>-<?php echo $grandChild_count; ?>"></div>
+                                                    <ul class="menu-list-level-3 menu-list-level-3-<?php echo $menu_count; ?>-<?php echo $grandChild_count; ?>" style="padding: 0 !important; <?php echo $block->getGridClsForChild(count($grandChild->getChildrenData())) ?>">
+                                                        <!-- <ul style="padding: 0 !important; min-width: 200px; display: grid; <?php echo $block->getGridClsForChild(count($grandChild->getChildrenData())) ?>"> -->
+                                                        <?php foreach ($grandChild->getChildrenData() as $grandGrandChild) : ?>
+
+                                                            <li class="menu-level-3 cus-grand-child-menu">
+                                                                <a class="child-menu-link" href="<?= $block->escapeHtml(__($grandGrandChild->getUrl())) ?>">
+                                                                    <div class="cus-menu-txt"><?= $block->escapeHtml(__($grandGrandChild->getName())) ?></div>
+                                                                </a>
+                                                            </li>
+
+                                                            <?php $grandGrandChild_count++ ?>
+                                                        <?php endforeach; ?>
+                                                    </ul>
+                                                    <!-- </div> -->
+                                                <?php endif; ?>
+
+
+
+                                            </li>
+                                        </ul>
+                                        <?php $grandChild_count++ ?>
+                                    <?php endforeach; ?>
+                                </div>
+                                <?php $child_count++ ?>
+                            <?php endforeach; ?>
+                            <?php $menu_count++ ?>
+                        </div>
+                    <?php endif; ?>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</nav>
+
+<script type="text/javascript">
+    var tid = setInterval(function() {
+        if (document.readyState !== 'complete') return;
+        clearInterval(tid);
+	 const menu = document.querySelector('#home-slider .item-inner');
+	if (menu) {
+		 var currHeight = menu.clientHeight;
+		if (currHeight > 0) {
+                var height = currHeight + "px";
+
+                var tree = document.querySelectorAll('.main-menu > li');
+                for (var i = 0; i < tree.length; i++) {
+                    if (Number(currHeight) < 482) {
+                        tree[i].style.lineHeight = "25px";
+                    } else {
+                        tree[i].style.lineHeight = "30px";
+                    }
+
+                }
+
+                document.getElementById("custom-main-menu").style.height = height;
+            }
+        }
+    }, 100);
+
+    function reportWindowSize() {
+        setTimeout(function() {
+		 const menu = document.querySelector('#home-slider .item-inner');
+		if (menu) {
+			 var currHeight = menu.clientHeight;
+			if (currHeight > 0) {
+                    var height = currHeight + "px";
+
+                    var tree = document.querySelectorAll('.main-menu > li');
+                    for (var i = 0; i < tree.length; i++) {
+                        if (Number(currHeight) < 482) {
+                            tree[i].style.lineHeight = "25px";
+                        } else {
+                            tree[i].style.lineHeight = "30px";
+                        }
+
+                    }
+                    document.getElementById("custom-main-menu").style.height = height;
+                }
+
+            }
+        }, 500)
+    }
+    window.onresize = reportWindowSize;
+</script>

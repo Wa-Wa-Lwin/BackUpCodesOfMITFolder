@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+   <preference for="MIT\Delivery\Api\Data\CustomDeliveryInterface" type="MIT\Delivery\Model\CustomDelivery" />
+   <preference for="MIT\Delivery\Api\Data\CustomDeliverySearchResultsInterface" type="Magento\Framework\Api\SearchResults" />
+   <preference for="MIT\Delivery\Api\CustomDeliveryRepositoryInterface" type="MIT\Delivery\Model\CustomDeliveryRepository" />
+    <type name="MIT\Delivery\Model\ResourceModel\CustomDelivery\Grid\Collection">
+    <arguments>
+        <argument name="mainTable" xsi:type="string">mit_delivery_customdelivery</argument>
+        <argument name="eventPrefix" xsi:type="string">mit_delivery_grid_collection</argument>
+        <argument name="eventObject" xsi:type="string">mit_grid_collection</argument>
+        <argument name="resourceModel" xsi:type="string">MIT\Delivery\Model\ResourceModel\CustomDelivery</argument>
+    </arguments>
+    </type>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="delivery_record_list_data_source" xsi:type="string">MIT\Delivery\Model\ResourceModel\CustomDelivery\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

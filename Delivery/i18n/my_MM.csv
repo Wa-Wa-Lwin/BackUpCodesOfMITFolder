@@ -1,0 +1,49 @@
+Back,Back
+"Delete Delivery","Delete Delivery"
+"Are you sure you want to do this?","Are you sure you want to do this?"
+"Save and Continue Edit","Save and Continue Edit"
+"Save Delivery","Save Delivery"
+MIT,MIT
+Delivery,Delivery
+"Add New Delivery","Add New Delivery"
+"You deleted the Delivery.","You deleted the Delivery."
+"We can't find a Delivery to delete.","We can't find a Delivery to delete."
+"This Delivery no longer exists.","This Delivery no longer exists."
+"Edit Delivery","Edit Delivery"
+"New Delivery","New Delivery"
+"Delivery Cost","Delivery Cost"
+"A total of %1 record(s) have been deleted.","A total of %1 record(s) have been deleted."
+"You saved the Delivery.","You saved the Delivery."
+"Something went wrong while saving the Delivery.","Something went wrong while saving the Delivery."
+"Importing was successful!","Importing was successful!"
+"Please select a city.","Please select a city."
+"Faq with id ""%1"" does not exist.","Faq with id ""%1"" does not exist."
+Edit,ပြင်မည်
+Delete,Delete
+"Are you sure you wan't to delete a selected delivery record?","Are you sure you wan't to delete a selected delivery record?"
+"Export Sample","Export Sample"
+"Import Delivery","Import Delivery"
+"Custom Shipping Module","Custom Shipping Module"
+Enabled,Enabled
+Title,Title
+"Method Name","Method Name"
+"Shipping Cost","Shipping Cost"
+"Ship to Applicable Countries","Ship to Applicable Countries"
+"Ship to Specific Countries","Ship to Specific Countries"
+"Show Method if Not Applicable","Show Method if Not Applicable"
+"Sort Order","Sort Order"
+Export,Export
+KeyWord,KeyWord
+"Browse import file","Browse import file"
+"Custom Shipping Module One","Custom Shipping Module One"
+"Custom Shipping Module Two","Custom Shipping Module Two"
+"Custom Shipping Module Three","Custom Shipping Module Three"
+"Custom Shipping Module Four","Custom Shipping Module Four"
+"General Information","General Information"
+Region,Region
+City,City
+"Delivery Method","Delivery Method"
+"Weight (and above)","Weight (and above)"
+"Total Items (and above)","Total Items (and above)"
+"Total Price (and above)","Total Price (and above)"
+"Do you want to delete selected row record?","Do you want to delete selected row record?"

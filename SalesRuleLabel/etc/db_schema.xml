@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="mit_salesrulelabel" resource="default" engine="innodb" comment="Salesrulelabel">
+        <column xsi:type="int" name="rule_id" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="varchar" name="rule_name" nullable="true" length="255" comment="Name"/>
+        <column xsi:type="varchar" name="websites" nullable="true" length="255" comment="Name"/>
+        <column xsi:type="varchar" name="customer_groups" nullable="true" length="255" comment="Name"/>
+        <column xsi:type="smallint" name="rule_status" unsigned="false" nullable="false" identity="false" default="0" comment="Is Active"/>
+        <column xsi:type="mediumtext" name="conditions_serialized" nullable="true" comment="Conditions Serialized"/>
+        <column xsi:type="mediumtext" name="actions_serialized" nullable="true" comment="Actions Serialized"/>
+        <column xsi:type="int" name="sale_rule_id" nullable="true" default="0" comment="Sales Rule Id"/>
+        <column xsi:type="int" name="discount_image_id" nullable="true" default="0" comment="Discount Image Id"/>
+        <column xsi:type="varchar" name="discount_label" nullable="true" default="" comment="Discount Label"/>
+        <column xsi:type="int" name="width" nullable="true" default="0" comment="Discount Image Width"/>
+        <column xsi:type="int" name="height" nullable="true" default="0" comment="Discount Image Height"/>
+        <column xsi:type="date" name="from_date" comment="From"/>
+        <column xsi:type="date" name="to_date" comment="To"/>
+        <column name="discount_label_color" nullable="true" xsi:type="varchar" comment="discount_label_color"/>
+		<column name="discount_label_style" nullable="true" xsi:type="text" comment="discount_label_style"/>
+        <column xsi:type="int" name="sort_order" unsigned="true" nullable="false" identity="false" default="0" comment="Sort Order"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_id"/>
+        </constraint>
+        <index referenceId="SALESRULELABEL_STATUS_SORT_ORDER_TO_DATE_FROM_DATE" indexType="btree">
+            <column name="rule_status"/>
+            <column name="sort_order"/>
+            <column name="to_date"/>
+            <column name="from_date"/>
+        </index>
+    </table>
+    <table name="mit_salesrule_label_product" resource="default" engine="innodb" comment="mit_salesrule_label_product Table">
+        <column xsi:type="int" name="rule_product_id" unsigned="true" nullable="false" identity="true" comment="Rule Product ID"/>
+        <column name="rule_id" nullable="false" xsi:type="int" comment="rule_id" identity="false"/>
+        <column name="product_id" nullable="false" xsi:type="int" comment="product_id" identity="false"/>
+        <column xsi:type="int" name="from_time" unsigned="true" nullable="false" identity="false" default="0" comment="From Time"/>
+        <column xsi:type="int" name="to_time" unsigned="true" nullable="false" identity="false" default="0" comment="To time"/>
+        <column xsi:type="int" name="customer_group_id" unsigned="false" nullable="true" identity="false"/>
+        <column xsi:type="int" name="sort_order" unsigned="true" nullable="false" identity="false" default="0" comment="Sort Order"/>
+        <column xsi:type="smallint" name="website_id" unsigned="true" nullable="false" identity="false" comment="Website ID"/>
+        <column xsi:type="int" name="discount_image_id" nullable="true" default="0" comment="Discount Image Id"/>
+        <column xsi:type="varchar" name="discount_label" nullable="true" default="" comment="Discount Label"/>
+        <column xsi:type="int" name="width" nullable="true" default="0" comment="Discount Image Width"/>
+        <column xsi:type="int" name="height" nullable="true" default="0" comment="Discount Image Height"/>
+        <column name="discount_label_color" nullable="true" xsi:type="varchar" comment="discount_label_color"/>
+		<column name="discount_label_style" nullable="true" xsi:type="text" comment="discount_label_style"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="rule_product_id"/>
+        </constraint>
+        <constraint xsi:type="unique" referenceId="MIT_SalesRuleLabel_RULE_FROM_TO_WEBSITE_GROUP_PRODUCT_ORDER">
+            <column name="rule_id"/>
+            <column name="from_time"/>
+            <column name="to_time"/>
+            <column name="website_id"/>
+            <column name="customer_group_id"/>
+            <column name="product_id"/>
+            <column name="sort_order"/>
+        </constraint>
+        <index referenceId="MIT_SaleRuleLabel_LABEL_RULE_ID" indexType="btree">
+            <column name="rule_id"/>
+        </index>
+        <index referenceId="MIT_SalesRuleLabel_PRODUCT_CUSTOMER_GROUP_ID" indexType="btree">
+            <column name="customer_group_id"/>
+        </index>
+        <index referenceId="MIT_SalesRuleLabel_PRODUCT_WEBSITE_ID" indexType="btree">
+            <column name="website_id"/>
+        </index>
+        <index referenceId="MIT_SalesRuleLabel_PRODUCT_FROM_TIME" indexType="btree">
+            <column name="from_time"/>
+        </index>
+        <index referenceId="MIT_SalesRuleLabel_PRODUCT_TO_TIME" indexType="btree">
+            <column name="to_time"/>
+        </index>
+        <index referenceId="MIT_SalesRuleLabel_PRODUCT_PRODUCT_ID" indexType="btree">
+            <column name="product_id"/>
+        </index>
+         <index referenceId="MIT_SalesRuleLabel_PRODUCT_DISCOUNT_IMAGE_ID" indexType="btree">
+            <column name="discount_image_id"/>
+        </index>
+    </table>
+</schema>

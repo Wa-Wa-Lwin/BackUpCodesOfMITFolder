@@ -1,0 +1,331 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="carriers" translate="label" type="text" sortOrder="320" showInDefault="1" showInWebsite="1" showInStore="1">
+            <group id="customshipping" translate="label" type="text" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Shipping Module</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Method Name</label>
+                </field>
+                <field id="shipping_cost" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" >
+                    <label>Shipping Cost</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+                <field id="export_city" translate="label comment tooltip" type="button" sortOrder="31" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Export</frontend_model>
+                </field>
+                <field id="export" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export" sortOrder="5" showInWebsite="1">
+                    <label>Export</label>
+                </field>
+                <field id="keyword" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>KeyWord</label>
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="delivery_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File"
+                       sortOrder="32" showInDefault="1" showInWebsite="1">
+                    <comment>Create in pub/media a folder with name custom_delivery.".</comment>
+                    <label>Browse import file </label>
+                    <backend_model>MIT\Delivery\Model\Config\Backend\UploadFile</backend_model>
+                    <upload_dir config="system" scope_info="0">custom_delivery</upload_dir>
+                </field>
+                <field id="update_city" translate="label comment tooltip" type="button" sortOrder="33" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Button</frontend_model>
+                </field>
+            </group>
+            <group id="customshippingone" translate="label" type="text" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Shipping Module One</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Method Name</label>
+                </field>
+                <field id="shipping_cost" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" >
+                    <label>Shipping Cost</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+                <field id="export_city" translate="label comment tooltip" type="button" sortOrder="31" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Export</frontend_model>
+                </field>
+                <field id="export" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export" sortOrder="5" showInWebsite="1">
+                    <label>Export</label>
+                </field>
+                <field id="keyword" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>KeyWord</label>
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="delivery_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File"
+                       sortOrder="32" showInDefault="1" showInWebsite="1">
+                    <comment>Create in pub/media a folder with name custom_delivery.".</comment>
+                    <label>Browse import file </label>
+                    <backend_model>MIT\Delivery\Model\Config\Backend\UploadFile</backend_model>
+                    <upload_dir config="system" scope_info="0">custom_delivery</upload_dir>
+                </field>
+                <field id="update_city" translate="label comment tooltip" type="button" sortOrder="33" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Button</frontend_model>
+                </field>
+            </group>
+            <group id="customshippingtwo" translate="label" type="text" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Shipping Module Two</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Method Name</label>
+                </field>
+                <field id="shipping_cost" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" >
+                    <label>Shipping Cost</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+                <field id="export_city" translate="label comment tooltip" type="button" sortOrder="31" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Export</frontend_model>
+                </field>
+                <field id="export" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export" sortOrder="5" showInWebsite="1">
+                    <label>Export</label>
+                </field>
+                <field id="keyword" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>KeyWord</label>
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="delivery_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File"
+                       sortOrder="32" showInDefault="1" showInWebsite="1">
+                    <comment>Create in pub/media a folder with name custom_delivery.".</comment>
+                    <label>Browse import file </label>
+                    <backend_model>MIT\Delivery\Model\Config\Backend\UploadFile</backend_model>
+                    <upload_dir config="system" scope_info="0">custom_delivery</upload_dir>
+                </field>
+                <field id="update_city" translate="label comment tooltip" type="button" sortOrder="33" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Button</frontend_model>
+                </field>
+            </group>
+            <group id="customshippingthree" translate="label" type="text" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Shipping Module Three</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Method Name</label>
+                </field>
+                <field id="shipping_cost" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" >
+                    <label>Shipping Cost</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+                <field id="export_city" translate="label comment tooltip" type="button" sortOrder="31" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Export</frontend_model>
+                </field>
+                <field id="export" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export" sortOrder="5" showInWebsite="1">
+                    <label>Export</label>
+                </field>
+                <field id="keyword" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>KeyWord</label>
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="delivery_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File"
+                       sortOrder="32" showInDefault="1" showInWebsite="1">
+                    <comment>Create in pub/media a folder with name custom_delivery.".</comment>
+                    <label>Browse import file </label>
+                    <backend_model>MIT\Delivery\Model\Config\Backend\UploadFile</backend_model>
+                    <upload_dir config="system" scope_info="0">custom_delivery</upload_dir>
+                </field>
+                <field id="update_city" translate="label comment tooltip" type="button" sortOrder="33" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Button</frontend_model>
+                </field>
+            </group>
+            <group id="customshippingfour" translate="label" type="text" sortOrder="900" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Custom Shipping Module Four</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Method Name</label>
+                </field>
+                <field id="shipping_cost" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" >
+                    <label>Shipping Cost</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+                <field id="export_city" translate="label comment tooltip" type="button" sortOrder="31" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Export</frontend_model>
+                </field>
+                <field id="export" translate="label" type="Magento\OfflineShipping\Block\Adminhtml\Form\Field\Export" sortOrder="5" showInWebsite="1">
+                    <label>Export</label>
+                </field>
+                <field id="keyword" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>KeyWord</label>
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Form\Field\Disable</frontend_model>
+                </field>
+                <field id="delivery_file_upload" translate="label" type="Magento\Config\Block\System\Config\Form\Field\File"
+                       sortOrder="32" showInDefault="1" showInWebsite="1">
+                    <comment>Create in pub/media a folder with name custom_delivery.".</comment>
+                    <label>Browse import file </label>
+                    <backend_model>MIT\Delivery\Model\Config\Backend\UploadFile</backend_model>
+                    <upload_dir config="system" scope_info="0">custom_delivery</upload_dir>
+                </field>
+                <field id="update_city" translate="label comment tooltip" type="button" sortOrder="33" showInDefault="1"
+                       showInWebsite="1" showInStore="0">
+                    <frontend_model>MIT\Delivery\Block\Adminhtml\System\Config\Button</frontend_model>
+                </field>
+	    </group>
+	    <group id="payatstore" translate="label" type="text" sortOrder="1000" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Pay At the Store</label>
+                <field id="active" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Enabled</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Title</label>
+                </field>
+                <field id="name" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Method Name</label>
+                </field>
+                <field id="shipping_cost" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Shipping Cost</label>
+                    <validate>validate-number validate-zero-or-greater</validate>
+                </field>
+                <field id="sallowspecific" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0" canRestore="1">
+                    <label>Ship to Applicable Countries</label>
+                    <frontend_class>shipping-applicable-country</frontend_class>
+                    <source_model>Magento\Shipping\Model\Config\Source\Allspecificcountries</source_model>
+                </field>
+                <field id="specificcountry" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Countries</label>
+                    <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
+                    <can_be_empty>1</can_be_empty>
+                </field>
+                <field id="showmethod" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Show Method if Not Applicable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <frontend_class>shipping-skip-hide</frontend_class>
+                </field>
+                <field id="specificregion" translate="label" type="multiselect" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Ship to Specific Region</label>
+                    <source_model>MIT\Delivery\Model\StateDropDown</source_model>
+                </field>
+                <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Sort Order</label>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

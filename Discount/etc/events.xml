@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+	<event name="adminhtml_controller_otherrule_after_save">
+		<observer name="mit_discount_observer_adminhtml_controller_otherrule_after_save" instance="MIT\Discount\Observer\Adminhtml\ControllerOtherRuleAfterSave"/>
+	</event>
+	<event name="adminhtml_controller_otherrule_after_delete">
+		<observer name="mit_discount_observer_adminhtml_controller_otherrule_after_delete" instance="MIT\Discount\Observer\Adminhtml\ControllerOtherRuleAfterDelete"/>
+	</event>
+	<event name="adminhtml_controller_catalogrule_after_save_custom">
+		<observer name="mit_discount_observer_adminhtml_controller_catalogrule_after_save" instance="MIT\Discount\Observer\Adminhtml\ControllerCatalogRuleAfterSave"/>
+	</event>
+	<event name="adminhtml_controller_salesrule_after_save_custom">
+		<observer name="mit_discount_observer_adminhtml_controller_salerule_after_save" instance="MIT\Discount\Observer\Adminhtml\ControllerSaleRuleAfterSave"/>
+	</event>
+</config>

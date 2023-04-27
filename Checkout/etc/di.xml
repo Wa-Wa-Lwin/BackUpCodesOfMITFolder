@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<preference for="MIT\Checkout\Api\Data\CheckoutResultInterface" type="MIT\Checkout\Model\CheckoutResult" />
+<preference for="MIT\Checkout\Api\PaymentInformationInterface" type="MIT\Checkout\Model\Api\PaymentInformationManagement" />
+<preference for="MIT\Checkout\Api\GuestPaymentInformationInterface" type="MIT\Checkout\Model\Api\GuestPaymentInformationManagement" />
+<preference for="Magento\Checkout\Controller\Cart\UpdateItemQty" type="MIT\Checkout\Controller\Cart\UpdateItemQty"/>
+<preference for="Magento\Checkout\Model\Cart" type="MIT\Checkout\Model\Cart"/>
+</config>

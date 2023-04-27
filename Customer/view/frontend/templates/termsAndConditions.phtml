@@ -1,0 +1,26 @@
+<div class="field tcagreecreateaccount required">
+    <div class="control">
+        <input type="checkbox" id="tcagreecreateaccount" name="terms_conditions" data-validate="{'validate-terms-conditions': true}" class="input-checkbox checkbox" value="1">
+        <label for="tcagreecreateaccount" class="label">
+        <?= __('I agree to GamonePwint\'s %1 Terms & Conditions %2', '<a href="' . $block->getTermsAndConditionsUrl() .'">', '</a>') ?>
+        </label>
+        <div id="custom-tandc-error"></div>
+    </div>
+</div>
+<script>
+    require([
+        "jquery",
+        "mage/mage"
+    ], function($){
+        var dataForm = $('#form-validate');
+        dataForm.mage('validation', {
+            errorPlacement: function(error, element) {
+                if (element.is('#tcagreecreateaccount')) {
+                    error.appendTo('#custom-tandc-error');
+                } else {
+                    element.after(error);
+                }
+            },
+        });
+    });
+</script>

@@ -1,0 +1,5 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Communication/etc/communication.xsd">
+    <topic name="notifycustomer.massmail" request="string">
+        <handler name="notifycustomer.massmail" type="MIT\Queue\Model\Consumer" method="process" />
+    </topic>
+</config>

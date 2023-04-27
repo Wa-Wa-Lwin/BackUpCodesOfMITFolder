@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../Magento/Backend/etc/menu.xsd">
+     <menu>
+          <add id="MIT_SalesRuleLabel::menu" title="Cart Price Label Rules" module="MIT_SalesRuleLabel" sortOrder="100" parent="Magento_CatalogRule::promo" action="mit_salesrulelabel/index/index" resource="MIT_SalesRuleLabel::menu"/>
+     </menu>
+</config>

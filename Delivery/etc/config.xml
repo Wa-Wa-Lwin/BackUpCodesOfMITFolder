@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <carriers>
+            <customshipping>
+                <active>0</active>
+                <title>Custom Shipping Title</title>
+                <name>Custom Shipping Method Name</name>
+                <shipping_cost>10</shipping_cost>
+                <sallowspecific>0</sallowspecific>
+                <sort_order>15</sort_order>
+                <model>MIT\Delivery\Model\Carrier\Customshipping</model>
+                <keyword>0</keyword>
+            </customshipping>
+            <customshippingone>
+                <active>0</active>
+                <title>Custom Shipping Title One</title>
+                <name>Custom Shipping Method Name One</name>
+                <shipping_cost>10</shipping_cost>
+                <sallowspecific>0</sallowspecific>
+                <sort_order>15</sort_order>
+                <model>MIT\Delivery\Model\Carrier\CustomshippingOne</model>
+                <keyword>1</keyword>
+            </customshippingone>
+            <customshippingtwo>
+                <active>0</active>
+                <title>Custom Shipping Title Two</title>
+                <name>Custom Shipping Method Name Two</name>
+                <shipping_cost>10</shipping_cost>
+                <sallowspecific>0</sallowspecific>
+                <sort_order>15</sort_order>
+                <model>MIT\Delivery\Model\Carrier\CustomshippingTwo</model>
+                <keyword>2</keyword>
+            </customshippingtwo>
+            <customshippingthree>
+                <active>0</active>
+                <title>Custom Shipping Title Three</title>
+                <name>Custom Shipping Method Name Three</name>
+                <shipping_cost>10</shipping_cost>
+                <sallowspecific>0</sallowspecific>
+                <sort_order>15</sort_order>
+                <model>MIT\Delivery\Model\Carrier\CustomshippingThree</model>
+                <keyword>3</keyword>
+            </customshippingthree>
+            <customshippingfour>
+                <active>0</active>
+                <title>Custom Shipping Title Four</title>
+                <name>Custom Shipping Method Name Four</name>
+                <shipping_cost>10</shipping_cost>
+                <sallowspecific>0</sallowspecific>
+                <sort_order>15</sort_order>
+                <model>MIT\Delivery\Model\Carrier\CustomshippingFour</model>
+                <keyword>4</keyword>
+	    </customshippingfour>
+	    <payatstore>
+                <active>1</active>
+                <title>Pay At the Store</title>
+                <shipping_cost>0</shipping_cost>
+                <sallowspecific>1</sallowspecific>
+                <specificcountry>MM</specificcountry>
+                <sort_order>15</sort_order>
+                <model>MIT\Delivery\Model\Carrier\PayAtTheStore</model>
+            </payatstore>
+        </carriers>
+    </default>
+</config>

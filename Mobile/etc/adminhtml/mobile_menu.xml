@@ -1,0 +1,10 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="MIT_Mobile::mobile" title="Mobile" module="MIT_Mobile" sortOrder="9999" resource="Magento_Backend::content" parent="Magento_Backend::content" />
+    </menu>
+</config>
+<!-- 
+<?xml version="1.0"?>
+<menu xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <add id="MIT_Mobile::mobile" title="Mobile" module="MIT_Mobile" sortOrder="999" resource="Magento_Backend::content"/>
+</menu> -->

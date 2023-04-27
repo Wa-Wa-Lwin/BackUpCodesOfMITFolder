@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Indexer/etc/indexer.xsd">
+    <indexer id="mit_salesrulelabel_product_indexer" view_id="mit_salesrulelabel_product_indexer" class="MIT\SalesRuleLabel\Model\Indexer\Product\Rule">
+        <title translate="true">MIT SalesRuleLabel Product Indexer</title>
+        <description translate="true">MIT SalesRuleLabel Indexer association</description>
+    </indexer>
+    <indexer id="mit_salesrulelabel_rule_indexer" view_id="mit_salesrulelabel_rule_indexer" class="MIT\SalesRuleLabel\Model\Indexer\Rule\RuleProductIndexer">
+        <title translate="true">MIT SalesRuleLabel Rule Indexer</title>
+        <description translate="true">MIT SalesRuleLabel Indexer association</description>
+    </indexer>
+</config>

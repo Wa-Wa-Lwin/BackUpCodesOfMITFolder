@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<preference for="MIT\Country\Api\Data\CustomCountryInfoInterface" type="MIT\Country\Model\CustomCountryInfo" />
+<preference for="MIT\Country\Api\Data\CustomRegionInfoInterface" type="MIT\Country\Model\CustomRegionInfo" />
+<preference for="MIT\Country\Api\CustomCountryInfoAcquireInterface" type="MIT\Country\Model\Api\CustomCountryInfoAcquire" />
+</config>

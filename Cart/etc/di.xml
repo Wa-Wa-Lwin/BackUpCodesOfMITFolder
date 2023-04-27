@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<preference for="MIT\Cart\Api\Data\CustomCartItemInterface" type="MIT\Cart\Model\Quote\CustomItem" />
+<preference for="MIT\Cart\Api\CustomCartItemRepositoryInterface" type="MIT\Cart\Model\Api\CustomCartRepository" />
+<preference for="MIT\Cart\Api\Data\CustomTotalsInterface" type="MIT\Cart\Model\Cart\CustomTotals" />
+<preference for="MIT\Cart\Api\Data\CustomTotalsItemInterface" type="MIT\Cart\Model\Cart\Totals\CustomItem" />
+<preference for="MIT\Cart\Api\CustomCartTotalRepositoryInterface" type="MIT\Cart\Model\Api\CustomCartTotalRepository" />
+</config>
+

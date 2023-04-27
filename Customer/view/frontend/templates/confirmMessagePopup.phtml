@@ -1,0 +1,33 @@
+<?php if ($block->isAccountConfirmPopup()) : ?>
+    <div id="customer-account-confirm-modal">
+        <div class="modal-body-content">
+            <p><?= $block->escapeHtml(__('လူကြီးမင်းအကောင့်ပြုလုပ်စဥ််ကဖြည့်သွင်းခဲ့သော Phone Number(သို့မဟုတ်)Gmailကို confirmation link(အတည်ပြုလင့်ခ်)ပေးပို့ထားပါသည်။ ထိုlinkကိုနှိပ်ပါကမိမိအကောင့်သို့ရောက်ရှိသွားမည်ဖြစ်ပြီးစတင်ဝယ်ယူအားပေးနိုင်ပါသည်။')) ?></p>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        require([
+            "jquery",
+            "Magento_Ui/js/modal/modal",
+            "domReady!"
+        ], function($, modal) {
+
+            var options = {
+                type: 'popup',
+                responsive: true,
+                'modalClass': 'acount-confirmed-modal',
+                buttons: [{
+                    text: $.mage.__('OK'),
+                    class: 'account-confirmed-btn',
+                    click: function() {
+                        this.closeModal();
+                    }
+                }]
+            };
+
+            var popup = modal(options, $('#customer-account-confirm-modal'));
+            $('#customer-account-confirm-modal').modal('openModal');
+        });
+    </script>
+<?php endif; ?>
+

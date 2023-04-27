@@ -1,0 +1,19 @@
+ol.products.list.items.product-items .four-blocks .product-item-photo .product-image-photo {
+    margin: 0 !important;
+    height: 100% !important;
+    height: -moz-available !important;
+    height: -webkit-fill-available !important;
+    width: -webkit-fill-available !important;
+    height: fill-available !important;
+}
+
+ol.products.list.items.product-items .four-blocks .product-item-photo,
+ol.products.list.items.product-items .four-blocks .product-image-container,
+ol.products.list.items.product-items .four-blocks .product-image-wrapper {
+    height: 100% !important;
+    height: -moz-available !important;
+    /* height: -webkit-fill-available !important; */
+    width: -webkit-fill-available !important;
+    height: fill-available !important;
+    /* padding-bottom: 0 !important; */
+}

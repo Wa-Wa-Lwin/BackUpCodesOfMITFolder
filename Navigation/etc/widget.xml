@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:helloworld:Magento_Widget:etc/widget.xsd">
+	<widget class="MIT\Navigation\Block\Widget\CustomMenu" id="mit_navigation_custommenu">
+		<label>MIT Navigation Menu</label>
+		<description>MIT Navigation Menu</description>
+	</widget>
+	<widget class="MIT\Navigation\Block\Widget\CustomSideMenu" id="mit_navigation_customsidemenu">
+		<label>MIT Navigation Side Menu</label>
+		<description>MIT Navigation Side Menu</description>
+	</widget>
+	<widget class="MIT\Navigation\Block\Widget\MenuBar" id="mit_navigation_menubar">
+		<label>Custom Navigation Menu</label>
+		<description>Custom Navigation Menu</description>
+	</widget>
+</widgets>

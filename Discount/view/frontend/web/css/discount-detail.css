@@ -1,0 +1,93 @@
+.product.media .circle-right {
+    right: 60px !important;
+}
+
+.product.media .circle-right-one,
+.product.media .diagonal-right,
+.product.media .darkred-right {
+    right: 60px !important;
+}
+
+
+/* .custom-ds-lbl {
+    display: none;
+} */
+
+.hidden {
+    display: none;
+}
+
+
+/* .product.data.items {
+    display: none;
+} */
+
+span.stock-qty {
+    line-height: 2rem;
+}
+
+.stock-qty-block {
+    position: absolute;
+    top: -28%;
+}
+
+@media only screen and (max-width: 767px) {
+    .stock-qty-block {
+        top: -20%;
+    }
+}
+
+.box-tocart .fieldset {
+    position: relative;
+}
+
+
+/* swatch color style */
+
+.swatch-option.color {
+    border-radius: 50%;
+    height: 21px !important;
+    width: 20px !important;
+    min-width: 20px;
+    max-height: 21px;
+    margin-right: 8px;
+    border: 2px solid transparent;
+    outline: 2px solid transparent;
+    box-shadow: 7px 5px 5px #ece3e3;
+}
+
+.swatch-option.image:not(.disabled):hover,
+.swatch-option.color:not(.disabled):hover {
+    border: 2px solid #ffffff !important;
+    outline: 2px solid #ca551b !important;
+}
+
+.swatch-option.color.selected {
+    outline: 2px solid #ca551b !important;
+    border: 2px solid #ffffff !important;
+    color: #333333;
+}
+
+.swatch-option.text.selected {
+    outline-color: #ca551b !important;
+}
+
+.swatch-option.color:last-child {
+    margin-right: 1px;
+}
+
+.free-shipping-cls {
+    position: absolute;
+    /* top: 0 !important; */
+    z-index: 10 !important;
+    left: 0;
+}
+
+.product.media img.free-shipping-img {
+    height: 60px !important;
+    width: 60px !important;
+}
+
+.product-info-main {
+    position: relative;
+}

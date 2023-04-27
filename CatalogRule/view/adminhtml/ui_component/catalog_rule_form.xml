@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<fieldset name="rule_information" sortOrder="10">
+        <!-- <field name="home_slider_img">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="label" xsi:type="string" translate="true">Home Slider Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                    <item name="baseTmpPath" xsi:type="string">cms/tmp</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="mit_calalogrule/promo_catalog/upload/type/home_slider_img"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="home_slider_img_mobile">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="label" xsi:type="string" translate="true">Home Slider Image Mobile</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                    <item name="baseTmpPath" xsi:type="string">cms/tmp</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="mit_calalogrule/promo_catalog/upload/type/home_slider_img_mobile"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="promo_slider_img">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">string</item>
+                    <item name="source" xsi:type="string">page</item>
+                    <item name="label" xsi:type="string" translate="true">Promotion Slider Image</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="formElement" xsi:type="string">fileUploader</item>
+                    <item name="elementTmpl" xsi:type="string">ui/form/element/uploader/uploader</item>
+                    <item name="previewTmpl" xsi:type="string">Magento_Catalog/image-preview</item>
+                    <item name="baseTmpPath" xsi:type="string">cms/tmp</item>
+                    <item name="required" xsi:type="boolean">false</item>
+                    <item name="sortOrder" xsi:type="number">60</item>
+                    <item name="uploaderConfig" xsi:type="array">
+                        <item name="url" xsi:type="url" path="mit_calalogrule/promo_catalog/upload/type/promo_slider_img"/>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="is_home_slider" formElement="checkbox">
+            <settings>
+                <label translate="true">IsHomeSlider</label>
+                <tooltip>
+                    <description translate="true">This rule will show in home slider.</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>checkbox</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="is_home_slider_one" formElement="checkbox">
+            <settings>
+                <label translate="true">IsHomeSliderOne</label>
+                <tooltip>
+                    <description translate="true">This rule will show in home slider one.</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>checkbox</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+        <field name="is_promotion_slider" formElement="checkbox">
+            <settings>
+                <label translate="true">IsPromotionSlider</label>
+                <tooltip>
+                    <description translate="true">This rule will show in promotion slider.</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>checkbox</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field> -->
+        <field name="is_weekly_promotion" formElement="checkbox">
+            <settings>
+                <label translate="true">IsWeeklyPromotion</label>
+                <tooltip>
+                    <description translate="true">This rule will show in weekly promotion.</description>
+                </tooltip>
+            </settings>
+            <formElements>
+                <checkbox>
+                    <settings>
+                        <prefer>checkbox</prefer>
+                        <valueMap>
+                            <map name="false" xsi:type="number">0</map>
+                            <map name="true" xsi:type="number">1</map>
+                        </valueMap>
+                    </settings>
+                </checkbox>
+            </formElements>
+        </field>
+    </fieldset>
+</form>

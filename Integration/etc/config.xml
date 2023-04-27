@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<custom_integration>
+			<stock>
+				<enabled/>
+				<token_url/>
+				<stock_url/>
+			</stock>
+			<simple>
+				<simple_sku>000000001</simple_sku>
+				<simple_name>000000001</simple_name>
+				<simple_stock>100</simple_stock>
+				<simple_categories>Default Category,Food And Beverages,Canned Food</simple_categories>
+				<simple_price>10000</simple_price>
+				<simple_attribute>color=black,size=M</simple_attribute>
+				<simple_special_price/>
+				<simple_from_date/>
+				<simple_to_date/>
+			</simple>
+			<configurable>
+				<configurable_sku>100000000</configurable_sku>
+				<configurable_name>100000000</configurable_name>
+				<configurable_categories>Default Category,Food And Beverages,Canned Food</configurable_categories>
+				<configurable_child_skus/>
+				<configurable_attribute>color,size</configurable_attribute>
+			</configurable>
+		</custom_integration>
+	</default>
+</config>

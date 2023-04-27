@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="mit_queue" translate="label" sortOrder="1000">
+            <label>mit_queue Extensions</label>
+        </tab>
+        <section id="massemailpromotioncustomers" translate="label" type="text" sortOrder="1002" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Mass Email Customers</label>
+            <tab>mit_queue</tab>
+            <resource>MIT_Queue::massemailcustomers_configuration</resource>
+            <group id="email" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="identity" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mass Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <field id="template" translate="label comment" type="select" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Mass Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="product_skus" translate="label skus" type="textarea" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Product Skus</label>
+                    <comment><![CDATA[Add comma separated product skus if want to add product in email: Please add {{layout area="frontend" handle="product_items"}} to your custom templates to include product]]></comment>
+                </field>
+            </group>
+            <group id="image_uploader" translate="label" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Image Uploader</label>
+                <field id="mail_image" type="MIT\Queue\Data\Form\Element\Imagedata" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">email/images</upload_dir>
+                    <base_url type="media" scope_info="1">email/images</base_url>
+                </field>
+                <field id="mail_image_one" type="MIT\Queue\Data\Form\Element\Imagedata" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Image One</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">email/images</upload_dir>
+                    <base_url type="media" scope_info="1">email/images</base_url>
+                </field>
+                <field id="mail_image_two" type="MIT\Queue\Data\Form\Element\Imagedata" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Image Two</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">email/images</upload_dir>
+                    <base_url type="media" scope_info="1">email/images</base_url>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

@@ -1,0 +1,46 @@
+<th scope="col">
+    <div style="background-color: pink;">
+
+        <?php if ($block->getReviewsSummaryHtml($_product, $templateType)) : ?>
+            <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
+        <?php else : ?>
+            <div class="product-reviews-summary short">
+                <div class="empty-rating-summary">
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($block->getReviewsSummaryHtml($_product, $templateType)) : ?>
+            <?= $block->getReviewsSummaryHtml($_product, $templateType) ?>
+        <?php else : ?>
+            <div class="product-reviews-summary short">
+                <div class="empty-rating-summary">
+                </div>
+            </div>
+        <?php endif; ?>
+
+
+        <?= $block->getProductPrice($_product) ?>
+        <?php if ($_product->isAvailable()) : ?>
+            <?= $block->getProductDetailsHtml($_product) ?>
+        <?php endif; ?>
+
+        <?php if ($_product->getTypeId() != 'configurable') : ?>
+            <div class="empty-variants"></div>
+        <?php endif; ?>
+
+        <!--  -->
+
+
+        <?php if ($showDescription) : ?>
+            <div class="product description product-item-description">
+                <?= /* @noEscape */ $_helper->productAttribute($_product, $_product->getShortDescription(), 'short_description') ?>
+                <a href="<?= $block->escapeUrl($_product->getProductUrl()) ?>" title="<?= /* @noEscape */ $_productNameStripped ?>" class="action more"><?= $block->escapeHtml(__('Learn More')) ?></a>
+            </div>
+        <?php endif; ?>
+
+
+    </div>
+
+
+</th>

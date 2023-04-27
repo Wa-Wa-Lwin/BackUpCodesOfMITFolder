@@ -1,0 +1,373 @@
+
+.products-grid .product-items .product-li .product-item-info .product-item-details .price-box .price {
+  font-size: 16px !important;
+}
+.home-services .item .text > strong {
+  text-transform: unset !important;
+  font-size: 14px !important;
+}
+.page-title-wrapper .page-title {
+  font-size: 20px !important;
+}
+@media (max-width: 991px) {
+  .page-title-wrapper .page-title {
+    font-size: 20px !important;
+  }
+}
+@media (max-width: 767px) {
+  .page-title-wrapper .page-title {
+    font-size: 20px !important;
+  }
+}
+@media (max-width: 479px) {
+  .page-title-wrapper .page-title {
+    font-size: 20px !important;
+  }
+}
+  .sidebar.sidebar-main .block .block-content.filter-content .filter-subtitle {
+    font-size: 14px !important;
+  }
+
+ .sidebar.sidebar-main .block .block-content.filter-content .filter-options .filter-options-title {
+   font-size: 14px !important;
+   text-transform: unset !important;
+  }
+
+.sidebar.sidebar-main .block .block-title > strong {
+    font-size: 14px !important;
+  }
+.products-grid .product-items .product-li .product-item-info .product-item-details .price-box .price {
+  font-size: 16px !important;
+}
+.catalog-product-view .product-info-main .product-info-price .price-box .special-price .price-wrapper .price {
+  font-size: 20px !important;
+}
+.catalog-product-view .product-info-main .product.attribute.overview .value {
+  font-size: 14px !important;
+}
+
+.abs-actions-addto,
+.bundle-options-container .block-bundle-summary .product-addto-links > .action,
+.product-item-actions .actions-secondary > .action,
+.product-social-links .action.tocompare,
+.wishlist.split.button > .action.split,
+.product-social-links .action.mailto.friend,
+.product-social-links .action.towishlist,
+.block-bundle-summary .action.towishlist,
+.product-item .action.towishlist,
+.table-comparison .action.towishlist {
+  text-transform: unset !important;
+  font-size: 14px !important;
+}
+.a2a_dd {
+    font-size: 14px !important;
+}
+.product.data.items > .item.title > .switch {
+    font-size: 14px !important;
+  }
+.message.success {
+  font-size: 14px !important;
+}
+.block-minicart .amount .price-wrapper:first-child .price {
+  font-size: 14px !important;
+}
+@media (max-width: 479px) {
+  .minicart-wrapper .block-minicart .block-content > .actions > .primary .action.primary {
+    font-size: 14px !important;
+  }
+}
+.abs-button-l,
+#store-selector .form-continue .actions-toolbar .action.primary,
+.form-address-edit .actions-toolbar .action.vertex-secondary,
+.order-review-form .action.primary,
+.bundle-actions .action.primary.customize,
+.bundle-options-container .block-bundle-summary .box-tocart .action.primary,
+.box-tocart .action.tocart,
+.cart-summary .checkout-methods-items .action.primary.checkout,
+.block-minicart .block-content > .actions > .primary .action.primary,
+.methods-shipping .actions-toolbar .action.primary,
+.block-authentication .action.action-register,
+.block-authentication .action.action-login,
+.checkout-payment-method .payment-method-content > .actions-toolbar > .primary .action.primary,
+.form-address-edit .actions-toolbar .action.primary,
+.box-tocart .action.instant-purchase,
+.multicheckout .action.primary {
+  font-size: 14px !important;
+}
+
+.product-item {
+  font-size: 14px !important;
+}
+
+@media only screen and (max-width: 1920px) and (min-width: 280) {
+.action.primary {
+    font-size: 14px !important;
+    text-transform: unset !important;
+    font-family: 'Roboto', sans-serif !important;
+    
+  }
+}
+.action.primary {
+    font-size: 14px !important;
+    text-transform: unset !important;
+    font-family: 'Roboto', sans-serif !important;
+    
+  }
+
+.cart.table-wrapper .product-item-name {
+  font-size: 14px !important;
+}
+
+.abs-incl-excl-tax .price-including-tax,
+.abs-incl-excl-tax .price-excluding-tax,
+.paypal-review .table-paypal-review-items .col.price .price-including-tax,
+.paypal-review .table-paypal-review-items .col.price .price-excluding-tax,
+.paypal-review .table-paypal-review-items .col.subtotal .price-including-tax,
+.paypal-review .table-paypal-review-items .col.subtotal .price-excluding-tax,
+.cart.table-wrapper .col.price .price-including-tax,
+.cart.table-wrapper .col.price .price-excluding-tax,
+.cart.table-wrapper .col.subtotal .price-including-tax,
+.cart.table-wrapper .col.subtotal .price-excluding-tax,
+.cart.table-wrapper .col.msrp .price-including-tax,
+.cart.table-wrapper .col.msrp .price-excluding-tax,
+.order-details-items .col.price .price-including-tax,
+.order-details-items .col.price .price-excluding-tax,
+.order-details-items .col.subtotal .price-including-tax,
+.order-details-items .col.subtotal .price-excluding-tax {
+  font-size: 14px !important;
+}
+
+.cart-summary > .title {
+   font-size: 20 !important;
+}
+.cart-summary .block .title strong {
+    font-size: 14px !important;
+}
+.abs-sidebar-totals .grand .mark,
+.cart-totals .grand .mark,
+.opc-block-summary .table-totals .grand .mark {
+  font-size: 14px !important;
+}
+.opc-progress-bar-item > span {
+    font-size: 20px !important;
+}
+
+.checkout-index-index .page-wrapper .opc-wrapper .step-title {
+    font-size: 20px !important;
+}
+
+#payment-method-braintree-cc-vault .field .hosted-control {
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 14px !important;
+}
+.page-product-giftcard .product-add-form .field:not(.text) .addon .addafter {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+  }
+
+body {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+  }
+h1 small,
+  h2 small,
+  h3 small,
+  h4 small,
+  h5 small,
+  h6 small,
+  h1 .small,
+  h2 .small,
+  h3 .small,
+  h4 .small,
+  h5 .small,
+  h6 .small {
+    font-family: 'Roboto', sans-serif !important;
+  }
+blockquote {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+  }
+button {
+    font-size: 14px !important;
+    font-family: 'Roboto', sans-serif !important;
+    
+  }
+.action-primary {
+    font-size: 14px !important;
+    font-family: 'Roboto', sans-serif !important;
+   
+  }
+a.pagebuilder-button-primary,
+  button.pagebuilder-button-primary,
+  div.pagebuilder-button-primary {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+  }
+
+.block-event .slider-panel .slider .item .action.event {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px !important;
+  }
+.checkout-index-index .page-wrapper .opc-wrapper .step-title {
+    font-size: 20px !important;
+  }
+.block-authentication .block-title {
+    font-size: 20px !important;
+  }
+  .abs-button-l,
+  #store-selector .form-continue .actions-toolbar .action.primary,
+  .form-address-edit .actions-toolbar .action.vertex-secondary,
+  .order-review-form .action.primary,
+  .bundle-actions .action.primary.customize,
+  .bundle-options-container .block-bundle-summary .box-tocart .action.primary,
+  .box-tocart .action.tocart,
+  .cart-summary .checkout-methods-items .action.primary.checkout,
+  .block-minicart .block-content > .actions > .primary .action.primary,
+  .methods-shipping .actions-toolbar .action.primary,
+  .block-authentication .action.action-register,
+  .block-authentication .action.action-login,
+  .checkout-payment-method .payment-method-content > .actions-toolbar > .primary .action.primary,
+  .form-address-edit .actions-toolbar .action.primary,
+  .box-tocart .action.instant-purchase,
+  .multicheckout .action.primary {
+    font-size: 14px !important;
+  }
+ .checkout-index-index .page-wrapper .opc-summary-wrapper .modal-content .opc-block-summary .title {
+    font-size: 20px !important;
+  }
+ .product-item {
+    font-size: 14px !important;
+  }
+  .abs-button-l,
+  #store-selector .form-continue .actions-toolbar .action.primary,
+  .form-address-edit .actions-toolbar .action.vertex-secondary,
+  .order-review-form .action.primary,
+  .bundle-actions .action.primary.customize,
+  .bundle-options-container .block-bundle-summary .box-tocart .action.primary,
+  .box-tocart .action.tocart,
+  .cart-summary .checkout-methods-items .action.primary.checkout,
+  .block-minicart .block-content > .actions > .primary .action.primary,
+  .methods-shipping .actions-toolbar .action.primary,
+  .block-authentication .action.action-register,
+  .block-authentication .action.action-login,
+  .checkout-payment-method .payment-method-content > .actions-toolbar > .primary .action.primary,
+  .form-address-edit .actions-toolbar .action.primary,
+  .box-tocart .action.instant-purchase,
+  .multicheckout .action.primary {
+    font-size: 14px !important;
+  }
+
+.custom-block-title {
+    font-size: 14px  !important;
+}
+.sidebar.sidebar-additional .block.block-compare .block-title > strong,
+.sidebar.sidebar-additional .block.block-wishlist .block-title > strong,
+.sidebar.sidebar-additional .block.block-reorder .block-title > strong {
+    font-size: 14px  !important;
+    }
+
+.login-container .block .block-title {
+    font-size: 14px  !important;
+  }
+
+.abs-account-title > strong,
+  .abs-account-title > span,
+  .abs-account-blocks .block-title > strong,
+  .abs-account-blocks .block-title > span,
+  .account .legend > strong,
+  .account .legend > span,
+  .form-giftregistry-search .legend > strong,
+  .form-giftregistry-search .legend > span,
+  .block-giftregistry-results .block-title > strong,
+  .block-giftregistry-results .block-title > span,
+  .block-giftregistry-shared-items .block-title > strong,
+  .block-giftregistry-shared-items .block-title > span,
+  .block-wishlist-search-form .block-title > strong,
+  .block-wishlist-search-form .block-title > span,
+  .block-wishlist-search-results .block-title > strong,
+  .block-wishlist-search-results .block-title > span,
+  .multicheckout .block-title > strong,
+  .multicheckout .block-title > span,
+  .multicheckout .block-content .title > strong,
+  .multicheckout .block-content .title > span,
+  .customer-review .review-details .title > strong,
+  .customer-review .review-details .title > span,
+  .paypal-review .block .block-title > strong,
+  .paypal-review .block .block-title > span,
+  .account .column.main .block:not(.widget) .block-title > strong,
+  .account .column.main .block:not(.widget) .block-title > span,
+  .multicheckout .block-title > strong,
+  .multicheckout .block-title > span,
+  .magento-rma-guest-returns .column.main .block:not(.widget) .block-title > strong,
+  .magento-rma-guest-returns .column.main .block:not(.widget) .block-title > span,
+  [class^='sales-guest-'] .column.main .block:not(.widget) .block-title > strong,
+  [class^='sales-guest-'] .column.main .block:not(.widget) .block-title > span,
+  .sales-guest-view .column.main .block:not(.widget) .block-title > strong,
+  .sales-guest-view .column.main .block:not(.widget) .block-title > span {
+    font-size: 14px  !important;
+  }
+
+  .wishlist-index-index .products-grid.wishlist .product-items .product-li .product-item-info .product-item-name .product-item-link {
+    font-size: 14px !important;
+  }
+  .wishlist-index-index .products-grid.wishlist .product-items .product-li .product-item-info .price-box .price {
+    font-size: 16px !important;
+  }
+  .wishlist-index-index .products-grid.wishlist .product-items .product-li .product-item-info .price-box .old-price .price {
+    font-size: 14px !important;
+  }
+  .fieldset > .legend {
+    font-size: 14px !important;
+  }
+  .catalog-product-view .product-info-main .product-info-price .price-box .old-price .price-wrapper .price {
+    font-size: 18px !important;
+    
+  }
+
+  .account .page-wrapper .column.main .block .block-content .box .box-content {
+    font-size: 14px !important;
+   
+  }
+
+  .abs-account-blocks .box-title > span,
+  .paypal-review .block .box-title > span,
+  .account .column.main .block:not(.widget) .box-title > span,
+  .multicheckout .box-title > span,
+  .magento-rma-guest-returns .column.main .block:not(.widget) .box-title > span,
+  [class^='sales-guest-'] .column.main .block:not(.widget) .box-title > span,
+  .sales-guest-view .column.main .block:not(.widget) .box-title > span {
+    font-size: 14px !important;
+  }
+
+  .abs-account-blocks .box-title > span,
+  .paypal-review .block .box-title > span,
+  .account .column.main .block:not(.widget) .box-title > span,
+  .multicheckout .box-title > span,
+  .magento-rma-guest-returns .column.main .block:not(.widget) .box-title > span,
+  [class^='sales-guest-'] .column.main .block:not(.widget) .box-title > span,
+  .sales-guest-view .column.main .block:not(.widget) .box-title > span {
+    font-size: 1.6rem;
+  }
+
+  select {
+    font-family: 'Roboto', sans-serif !important;
+    font-size: 14px;
+    
+  }
+
+ a.product-item-link {
+    font-size: 14px;
+   
+}
+
+.checkout-index-index .checkout-container .authentication-wrapper .action.action-auth-toggle {
+  text-transform: unset !important;
+}
+
+
+
+
+
+
+
+

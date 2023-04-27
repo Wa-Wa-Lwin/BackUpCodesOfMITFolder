@@ -1,0 +1,10 @@
+<?php
+
+/** @var Magento\Catalog\Block\Product\View\Description $block */
+$product = $block->getProduct();
+?>
+<?php if ($this->helper(\MIT\WeeklyPromo\Helper\PromoRetriever::class)->isFreeShipping([$product->getId()])) : ?>
+    <div class="free-shipping-cls">
+        <img class="free-shipping-img" src="<?= $this->helper(\MIT\WeeklyPromo\Helper\PromoRetriever::class)->getFreeShippingImgPath()  ?>">
+    </div>
+<?php endif; ?>

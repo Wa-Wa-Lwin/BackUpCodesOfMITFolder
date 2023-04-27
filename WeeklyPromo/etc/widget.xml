@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Widget:etc/widget.xsd">
+	<widget id="mit_weeklypromo_promo" class="MIT\WeeklyPromo\Block\Widget\Promotion">
+		<label>MIT_WeeklyPromo</label>
+		<description>MIT_WeeklyPromo</description>
+		<parameters>
+			<parameter name="title" xsi:type="text" visible="true" sort_order="10">
+				<label>Title</label>
+			</parameter>
+			<parameter name="button_title" xsi:type="text" visible="true" sort_order="10">
+				<label>Link Title</label>
+			</parameter>
+			<parameter name="no_of_products" xsi:type="text" visible="true" sort_order="10">
+				<label>Number of Products to Display</label>
+			</parameter>
+		</parameters>
+	</widget>
+<widget id="mit_weeklypromo_promo_slider" class="MIT\WeeklyPromo\Block\Widget\PromotionSlider">
+	<label>MIT_WeeklyPromo_Slider</label>
+	<description>MIT_WeeklyPromo_Slider</description>
+	<parameters>
+		<parameter name="title" xsi:type="text" visible="true" sort_order="10">
+			<label>Title</label>
+		</parameter>
+		<parameter name="no_of_products" xsi:type="text" visible="true" sort_order="10">
+			<label>Number of Products to Display</label>
+		</parameter>
+	</parameters>
+</widget>
+</widgets>

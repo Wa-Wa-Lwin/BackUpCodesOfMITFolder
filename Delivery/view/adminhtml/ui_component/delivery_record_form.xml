@@ -1,0 +1,160 @@
+<?xml version="1.0" ?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+	<argument name="data" xsi:type="array">
+		<item name="js_config" xsi:type="array">
+			<item name="provider" xsi:type="string">delivery_record_form.delivery_form_data_source</item>
+		</item>
+		<item name="label" xsi:type="string" translate="true">General Information</item>
+		<item name="template" xsi:type="string">templates/form/collapsible</item>
+	</argument>
+	<settings>
+		<buttons>
+			<button name="back" class="MIT\Delivery\Block\Adminhtml\Delivery\Edit\BackButton"/>
+			<button name="delete" class="MIT\Delivery\Block\Adminhtml\Delivery\Edit\DeleteButton"/>
+			<button name="save" class="MIT\Delivery\Block\Adminhtml\Delivery\Edit\SaveButton"/>
+			<button name="save_and_continue" class="MIT\Delivery\Block\Adminhtml\Delivery\Edit\SaveAndContinueButton"/>
+		</buttons>
+		<namespace>delivery_record_form</namespace>
+		<dataScope>data</dataScope>
+		<deps>
+			<dep>delivery_record_form.delivery_form_data_source</dep>
+		</deps>
+	</settings>
+	<dataSource name="delivery_form_data_source">
+		<argument name="data" xsi:type="array">
+			<item name="js_config" xsi:type="array">
+				<item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+			</item>
+		</argument>
+		<settings>
+			<submitUrl path="*/*/save"/>
+		</settings>
+		<dataProvider name="delivery_form_data_source" class="MIT\Delivery\Model\CustomDelivery\DataProvider">
+			<settings>
+				<requestFieldName>id</requestFieldName>
+				<primaryFieldName>id</primaryFieldName>
+			</settings>
+		</dataProvider>
+	</dataSource>
+	<fieldset name="general">
+		<settings>
+			<label>General</label>
+		</settings>
+        <field name="region" sortOrder="10">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">MIT\Delivery\Model\StateDropDown</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Region</item>
+					<item name="component" xsi:type="string">MIT_Delivery/js/form/element/select-options</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">CustomDelivery</item>
+                    <item name="dataScope" xsi:type="string">region</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+        <field name="city" sortOrder="11">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">MIT\Delivery\Model\CityDropDown</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">City</item>
+					<item name="component" xsi:type="string">MIT_Delivery/js/form/element/select-options-city</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">CustomDelivery</item>
+                    <item name="dataScope" xsi:type="string">city</item>
+					<item name="default" xsi:type="string">0</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+        <field name="custom_delivery_type" sortOrder="12">
+            <argument name="data" xsi:type="array">
+                <item name="options" xsi:type="object">MIT\Delivery\Model\DeliveryDropDown</item>
+                <item name="config" xsi:type="array">
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="label" xsi:type="string" translate="true">Delivery Method</item>
+                    <item name="formElement" xsi:type="string">select</item>
+                    <item name="source" xsi:type="string">CustomDelivery</item>
+                    <item name="dataScope" xsi:type="string">custom_delivery_type</item>
+                    <item name="default" xsi:type="string">0</item>
+                    <item name="validation" xsi:type="array">
+                        <item name="required-entry" xsi:type="boolean">true</item>
+                    </item>
+                </item>
+            </argument>
+        </field>
+
+		<field name="weight" formElement="input" sortOrder="13">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">CustomDelivery</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>price</dataType>
+				<label translate="true">Weight (and above)</label>
+				<dataScope>weight</dataScope>
+				<validation>
+					<rule name="validate-zero-or-greater" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+
+        <field name="items" formElement="input" sortOrder="14">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">CustomDelivery</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>price</dataType>
+				<label translate="true">Total Items (and above)</label>
+				<dataScope>items</dataScope>
+				<validation>
+					<rule name="validate-zero-or-greater" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+
+        <field name="total" formElement="input" sortOrder="15">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">CustomDelivery</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>price</dataType>
+				<label translate="true">Total Price (and above)</label>
+				<dataScope>total</dataScope>
+				<validation>
+					<rule name="validate-zero-or-greater" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+
+        <field name="shipping" formElement="input" sortOrder="16">
+			<argument name="data" xsi:type="array">
+				<item name="config" xsi:type="array">
+					<item name="source" xsi:type="string">CustomDelivery</item>
+				</item>
+			</argument>
+			<settings>
+				<dataType>price</dataType>
+				<label translate="true">Shipping Cost</label>
+				<dataScope>shipping</dataScope>
+				<validation>
+					<rule name="required-entry" xsi:type="boolean">true</rule>
+					<rule name="validate-zero-or-greater" xsi:type="boolean">true</rule>
+				</validation>
+			</settings>
+		</field>
+	</fieldset>
+</form>

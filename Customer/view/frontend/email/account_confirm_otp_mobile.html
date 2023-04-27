@@ -1,0 +1,22 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<!--@subject {{trans "Please confirm your %store_name account" store_name=$store.frontend_name}} @-->
+<!--@vars {
+"var store.frontend_name":"Store Name",
+"var customer.name":"Customer Name",
+} @-->
+{{template config_path="design/email/header_template"}}
+
+<p class="greeting">{{trans "Dear %name," name=$customer.name}}</p>
+<p>{{trans "Plase confirm your account using this OTP code."}}</p>
+<p>{{trans "Your OTP code is : "}}<strong>{{var customer.confirmation}}</strong></p>
+
+<!-- <h3><strong>{{var customer.email}}</strong></h3> -->
+
+<p>{{trans "This code is valid for 5 minutes."}}</p>
+
+{{template config_path="design/email/footer_template"}}

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="MIT\Product\Api\CustomRecentlyViewedProductInterface" type="MIT\Product\Model\Api\CustomRecentlyViewedProduct" />
+	<preference for="MIT\Product\Api\CustomComparedProductInterface" type="MIT\Product\Model\Api\CustomComparedProduct" />
+	<preference for="MIT\Product\Api\Data\CustomCategoryManagementInterface" type="MIT\Product\Model\CustomCategory" />
+	<preference for="MIT\Product\Api\CustomCategoryInterface" type="MIT\Product\Model\Api\CustomCategory" />
+	<preference for="MIT\Product\Api\CustomBestSellerInterface" type="MIT\Product\Model\Api\CustomBestSeller" />
+	<preference for="Magento\ConfigurableProduct\Helper\Product\Options\Loader" type="MIT\Product\Helper\Product\Options\Loader" />
+	<preference for="MIT\Product\Api\Data\CustomProductManagementInterface" type="MIT\Product\Model\CustomProduct" />
+	<preference for="MIT\Product\Api\CustomProductInterface" type="MIT\Product\Model\Api\CustomProduct" />
+	<preference for="MIT\Product\Api\CustomCollectionsInterface" type="MIT\Product\Model\Api\CustomCollections" />
+	<preference for="MIT\Product\Api\HomeSliderInterface" type="MIT\Product\Model\Api\HomeSlider"/>
+	<preference for="MIT\Product\Api\Data\CustomProductSearchResultsInterface" type="MIT\Product\Model\CustomProductSearchResults"/>
+	<preference for="Magento\Catalog\Model\Category\Tree" type="MIT\Product\Model\Category\Tree"/>
+	<preference for="MIT\Product\Api\CustomRatingAndReviewInterface" type="MIT\Product\Model\Api\CustomRatingAndReview"/>
+	<preference for="MIT\Product\Api\CustomRefundRequestInterface" type="MIT\Product\Model\Api\CustomRefundRequest"/>
+	<preference for="MIT\Product\Api\CustomLayerNavigationInterface" type="MIT\Product\Model\Api\CustomLayerNavigation"/>
+	<preference for="MIT\Product\Api\Data\ReviewManagementSearchResultsInterface" type="MIT\Product\Model\ReviewManagementSearchResults"/>
+	<preference for="MIT\Product\Api\Data\ReviewManagementInterface" type="MIT\Product\Model\ReviewManagement"/>
+	<preference for="MIT\Product\Api\Data\CustomKeyValInterface" type="MIT\Product\Model\CustomKeyVal"/>
+	<preference for="Magento\Catalog\Model\Layer\Category" type="MIT\Product\Model\Layer\Category"/>
+    <preference for="MIT\Product\Api\Data\CustomerDownloadableProductManagementInterface" type="MIT\Product\Model\CustomerDownloadableProductManagement"/>
+	<preference for="MIT\Product\Api\Data\DownloadableProductSearchResultInterface" type="MIT\Product\Model\DownloadableProductSearchResults"/>
+	<preference for="MIT\Product\Api\CustomerDownloadableProductInterface" type="MIT\Product\Model\Api\CustomerDownloadableProduct"/>
+	<preference for="MIT\Product\Api\Data\GroupProductInterface" type="MIT\Product\Model\GroupProduct"/>
+	<preference for="MIT\Product\Api\Data\DiscountLabelInterface" type="MIT\Product\Model\DiscountLabel"/>
+	<preference for="MIT\Product\Api\Data\SizeChartInterface" type="MIT\Product\Model\SizeChartData"/>
+	<preference for="MIT\Product\Api\Data\FreeShippingInterface" type="MIT\Product\Model\FreeShipping"/>
+	<preference for="MIT\Product\Api\Data\ProductAttributesInterface" type="MIT\Product\Model\ProductAttributes"/>
+	<preference for="MIT\Product\Api\Data\StatusShowInterface" type="MIT\Product\Model\StatusShow"/>
+	<type name="Magento\Catalog\Api\Data\ProductInterface">
+		<plugin name="add_size_chart_and_free_shipping_product_and_product_attributes_api" type="MIT\Product\Plugin\ProductAttributesLoad" sortOrder="10" disabled="false"/>
+	</type>
+	<preference for="MIT\Product\Api\CustomNewProductInterface" type="MIT\Product\Model\Api\CustomNewProduct"/>
+</config>
+

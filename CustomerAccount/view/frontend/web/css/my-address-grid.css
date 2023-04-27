@@ -1,0 +1,34 @@
+@media (min-width: 639px),
+print {
+    .additional-addresses .table-additional-addresses-items .col.name {
+        width: 15%;
+    }
+
+    .additional-addresses .table-additional-addresses-items .col.streetaddress {
+        width: 18%;
+    }
+
+    .additional-addresses .table-additional-addresses-items .col.city {
+        width: 14%;
+    }
+
+    .additional-addresses .table-additional-addresses-items .col.state {
+        width: 14.7%;
+    }
+
+    .additional-addresses .table-additional-addresses-items .col.country {
+        width: 15%;
+    }
+
+    .additional-addresses .table-additional-addresses-items .col.phone {
+        width: 14%;
+    }
+
+    .additional-addresses .table-additional-addresses-items tbody>tr>td {
+        padding: 10px 5px;
+    }
+
+    .additional-addresses .table-additional-addresses-items thead>tr>th {
+        padding: 10px 5px;
+    }
+}

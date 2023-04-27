@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="sales_email_pending_template" label="New Pending Order" file="order_pending.html" type="html" module="MIT_Customer" area="frontend"/>
+    <template id="sales_email_pending_guest_template" label="New Pending Order for Guest" file="order_pending_guest.html" type="html" module="MIT_Customer" area="frontend"/>
+    <template id="reset_password_email_template_mobile" label="Reset Password Email Template" file="reset_password_mobile.html" type="html" module="MIT_Customer" area="frontend"/>
+    <template id="account_confirm_otp_email_template_mobile" label="Account Confirmatino with OTP Email Template" file="account_confirm_otp_mobile.html" type="html" module="MIT_Customer" area="frontend"/>
+    <template id="reset_password_email_template_otp_mobile" label="Reset Password Email OTP Mobile" file="reset_password_email_template_otp_mobile.html" type="html" module="MIT_Customer" area="frontend"/>
+
+</config>
+

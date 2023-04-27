@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
+        <attribute code="size_chart" type="MIT\Product\Api\Data\SizeChartInterface" />
+        <attribute code="free_shipping" type="MIT\Product\Api\Data\FreeShippingInterface" />
+        <attribute code="product_attributes" type="MIT\Product\Api\Data\ProductAttributesInterface[]"/>
+    </extension_attributes>
+</config>

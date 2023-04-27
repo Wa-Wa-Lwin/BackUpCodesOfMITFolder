@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block Magento\Catalog\Block\Product\ProductList\Item\AddTo\Compare */
+?>
+<?php $productHelper = $this->helper(\MIT\Product\Helper\ProductHelper::class); ?>
+<?php if ($this->helper(Payment\Kbz\Helper\Data::class)->getConfig('mpsocialshare/general/enabled')) : ?>
+    <div class="a2a_kit a2a_kit_size_32 a2a_default_style action" data-a2a-url="<?= $block->getProductUrl($block->getProduct()) ?>" data-a2a-title="<?= ($block->getProduct()->getName()) ?>">
+        <a class="a2a_dd" href="https://www.addtoany.com/share">
+            <svg width="23px" height="23px" viewBox="0 0 512 512" class="custom-share-icon" xmlns="http://www.w3.org/2000/svg">
+                <path fill="var(--ci-primary-color, currentColor)" d="M404,344a75.9,75.9,0,0,0-60.208,29.7L179.869,280.664a75.693,75.693,0,0,0,0-49.328L343.792,138.3a75.937,75.937,0,1,0-13.776-28.976L163.3,203.946a76,76,0,1,0,0,104.108l166.717,94.623A75.991,75.991,0,1,0,404,344Zm0-296a44,44,0,1,1-44,44A44.049,44.049,0,0,1,404,48ZM108,300a44,44,0,1,1,44-44A44.049,44.049,0,0,1,108,300ZM404,464a44,44,0,1,1,44-44A44.049,44.049,0,0,1,404,464Z" class="ci-primary" />
+            </svg>
+        </a>
+    </div>
+    <script type="text/javascript">
+        var a2a_config = a2a_config || {};
+        a2a_config.num_services = 4;
+        a2a_config.prioritize = ['facebook', 'viber', 'facebook_messenger', 'telegram'];
+    </script>
+<?php endif; ?>

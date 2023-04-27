@@ -1,0 +1,18 @@
+<!-- <acl>
+    <resources>
+        <resource id="Magento_Backend::content">
+            <resource id="MIT_Mobile::mobile" title="Mobile" sortOrder="9999"/>
+        </resource>
+    </resources>
+</acl> -->
+
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="MIT_Mobile::mobile" title="Mobile" sortOrder="999" />
+            </resource>
+        </resources>
+    </acl>
+</config>

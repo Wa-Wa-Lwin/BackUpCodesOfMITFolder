@@ -1,0 +1,152 @@
+<?php
+/**
+ * @var \MIT\HomePagePopup\Block\All\PopupImage $block
+ */
+
+$collection = $block->getFirstPopupImage();
+
+?>
+
+<div id="homepage-popup-modal" class="homepage-popup-modal" style="display: none;">
+    <div class="custom-row">
+        <div class="custom-col">
+            <div class="card-image">
+                <div class="card-img-tiles">
+                    <div class="inner">
+                        <div class="main-popup-img">
+                            <button id="close-popup-modal" class="popup-close-btn" type="button" data-role="closeBtn">
+                                <span><i class="fa-thin fa-circle-xmark"></i></span>
+                            </button>
+                            <img src="<?php echo $collection; ?>" class="popup-image" alt="Popup Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* For mobile phones: */
+@media all and (max-width: 768px), print {
+    .home-popup-modal {
+        width: 78% !important;
+        left: 0px !important;
+        height: 500px !important;
+        margin-top: 80px !important;
+    }
+    .home-popup-modal .modal-inner-wrap {
+        height: auto !important;
+    }
+    .home-popup-modal button#close-popup-modal {
+        background: transparent;
+        position: fixed;
+        left: auto !important;
+        right: 0%;
+        width: 44px !important;
+        border: none;
+    }
+    .home-popup-modal button#close-popup-modal:before {
+        font-size: 25px !important;
+        line-height: 0px !important;
+        content: '\f057';
+        font-family: 'Fontawesome';
+    }
+}
+.home-popup-modal {
+    width: 800px;
+    margin: auto;
+    margin-top: 30px;
+    height: 500px;
+}
+.home-popup-modal .modal-content {
+    padding: 0px !important;
+}
+.home-popup-modal .homepage-popup-modal {
+    max-width: 1280px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.home-popup-modal .custom-row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.home-popup-modal .custom-col{
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 0px !important;
+}
+.home-popup-modal .card-image {
+    background-color: transparent;
+    height: auto !important;
+    margin-bottom: 0px !important;
+}
+.home-popup-modal .card-img-tiles {
+    display: block;
+}
+.home-popup-modal .card-img-tiles .inner {
+    display: table;
+    width: 100%
+}
+.home-popup-modal .main-popup-img {
+    display: table-cell;
+    width: 33%;
+    padding: 0px;
+    vertical-align: middle;
+}
+.home-popup-modal button#close-popup-modal {
+    background: transparent;
+    position: fixed;
+    left: auto;
+    right: 0%;
+    width: 53px;
+    border: none;
+}
+.home-popup-modal button#close-popup-modal:before {
+    font-size: 35px;
+    content: '\f057';
+    font-family: 'Fontawesome';
+}
+.home-popup-modal img.popup-image {
+    height: auto;
+    display: inherit;
+}
+</style>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        "Magento_Ui/js/modal/modal",
+        "domReady!"
+    ],function($, modal) {
+        var image = $('#homepage-popup-modal img').attr('src');
+        if(image){
+            var options = {
+                type: 'popup',
+                responsive: true,
+                innerScroll: false,
+                modalClass: "home-popup-modal",
+                buttons: []
+            };
+            var popupCookie = $.cookie('homepage_popup_image');
+            if(!popupCookie || popupCookie == 'undefined'){
+                var popup = modal(options, $('#homepage-popup-modal'));
+                $.cookie('homepage_popup_image', '1', { path: '/', expires: 1 });
+                $('#homepage-popup-modal').modal('openModal');
+            }
+            $('.modal-header').hide();
+            $("#close-popup-modal").click(function() {
+                var popup = modal(options, $('#homepage-popup-modal'));
+                $('#homepage-popup-modal').modal('closeModal');
+            });
+        }
+
+
+    });
+</script>
+
+

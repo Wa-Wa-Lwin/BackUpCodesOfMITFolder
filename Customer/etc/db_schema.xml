@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="customer_entity" resource="default" engine="innodb" comment="Customer Entity">
+        <column xsi:type="timestamp" name="otp_expired_date" on_update="false" nullable="true" comment="OTP Code Expired Date"/>
+        <column xsi:type="smallint" name="otp_wrong_count" unsigned="false" nullable="true" identity="false" default="0" comment="OTP Code Wrong Count"/>
+        <column xsi:type="smallint" name="confirm_mail_send_count" unsigned="false" nullable="true" identity="false" default="0" comment="Confirmation Mail Sending Count"/>
+        <column xsi:type="smallint" name="reset_password_wrong_count" nullable="true" default="0" comment="Reset Password Wrong Count"/>
+        <column xsi:type="smallint" name="reset_password_mail_count" nullable="true" default="0" comment="Reset Password Resend OTP Wrong Count"/>
+    </table>
+</schema>

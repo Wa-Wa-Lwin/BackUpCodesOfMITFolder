@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="MITHomePagePopupUiDataProviderPopupImageFormModifierPool" type="Magento\Ui\DataProvider\Modifier\Pool">
+        <arguments>
+            <argument name="modifiers" xsi:type="array">
+                <item name="image_data" xsi:type="array">
+                    <item name="class" xsi:type="string">MIT\HomePagePopup\Model\Ui\DataProvider\PopupImage\Form\Modifier\ImageData</item>
+                    <item name="sortOrder" xsi:type="number">10</item>
+                </item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="MIT\HomePagePopup\Model\DataProvider">
+        <arguments>
+            <argument name="pool" xsi:type="object">MITHomePagePopupUiDataProviderPopupImageFormModifierPool</argument>
+        </arguments>
+    </type>
+</config>

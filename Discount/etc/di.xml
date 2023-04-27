@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="MIT\Discount\Api\LabelRepositoryInterface" type="MIT\Discount\Model\LabelRepository"/>
+	<preference for="MIT\Discount\Api\Data\LabelInterface" type="MIT\Discount\Model\Label"/>
+	<preference for="MIT\Discount\Api\Data\LabelSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<preference for="MIT\Discount\Api\LabelImageRepositoryInterface" type="MIT\Discount\Model\LabelImageRepository"/>
+	<preference for="MIT\Discount\Api\Data\LabelImageInterface" type="MIT\Discount\Model\LabelImage"/>
+	<preference for="MIT\Discount\Api\Data\LabelImageSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<preference for="Magento\CatalogRule\Api\Data\RuleInterface" type="MIT\Discount\Api\Data\RuleInterface"/>
+	<preference for="Magento\CatalogRule\Model\Rule" type="MIT\Discount\Model\Rule"/>
+	<preference for="Magento\SalesRule\Api\Data\RuleInterface" type="MIT\Discount\Api\Data\SalesRuleInterface"/>
+	<preference for="MIT\Discount\Api\Data\SalesRuleInterface" type="MIT\Discount\Model\SalesRule"/>
+	<preference for="Magento\SalesRule\Model\Data\Rule" type="MIT\Discount\Model\SalesRule"/>
+	<type name="Magento\CatalogRule\Model\Rule">
+		<plugin name="MIT_Discount_Plugin_Magento_CatalogRule_Model_Rule" type="MIT\Discount\Plugin\Magento\CatalogRule\Model\Rule" sortOrder="10" disabled="false"/>
+	</type>
+	<type name="Magento\Checkout\CustomerData\Cart">
+		<plugin name="cartPrivateDataDiscount" type="MIT\Discount\Plugin\Checkout\CustomerData\Cart"/>
+	</type>
+</config>

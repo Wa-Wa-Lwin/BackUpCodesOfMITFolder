@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/mine/rewardpoint/milestone" method="GET">
+        <service class="MIT\RewardPoints\Api\CustomRewardPointInterface" method="getMileStoneByCustomer"/>
+        <resources>
+            <resource ref="self"/>
+        </resources>
+        <data>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/mine/rewardpoint/exchange" method="GET">
+        <service class="MIT\RewardPoints\Api\CustomRewardPointInterface" method="getPointExchangeByQuoteCustomer"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+            <parameter name="customerId" force="true">%customer_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/guest-carts/:cartId/rewardpoint/exchange" method="GET">
+        <service class="MIT\RewardPoints\Api\CustomRewardPointInterface" method="getPointExchangeByQuoteGuest"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>

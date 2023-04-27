@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="sales" translate="label" sortOrder="999">
+			<label>sales</label>
+		</tab>
+		<section id="order" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Auto Cancel Order</label>
+			<tab>sales</tab>
+			<resource>MIT_OrderCancel::config_mit_ordercancel</resource>
+			<group id="configurable_cron" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+				<label>Cron Settings</label>
+				<field id="auto_cancel_order_enabled" translate="label" type="select" sortOrder="5" showInDefault="1">
+					<label>Enable Auto Cancel Order</label>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="days_old" translate="label" type="select" sortOrder="20" showInDefault="1">
+					<label>Automaticallly cancel pending orders older than this number of days</label>
+					<depends>
+						<field id="auto_cancel_order_enabled">1</field>
+					</depends>
+					<source_model>MIT\OrderCancel\Model\Config\DaysOld</source_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

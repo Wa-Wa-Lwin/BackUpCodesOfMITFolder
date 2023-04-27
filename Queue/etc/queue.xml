@@ -1,0 +1,8 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework-message-queue:etc/queue.xsd">
+    <broker topic="notifycustomer.massmail" exchange="magento-db" type="db">
+        <queue name="notifycustomer.massmail"
+               consumer="notifycustomer.massmail"
+               consumerInstance="Magento\Framework\MessageQueue\Consumer"
+               handler="MIT\Queue\Model\Consumer::process"/>
+    </broker>
+</config>

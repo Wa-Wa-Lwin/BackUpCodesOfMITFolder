@@ -1,0 +1,124 @@
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+
+<div data-bind='mageInit: {"MIT_HomePagePopup/js/promo-popup":{}}'>
+    <div id="promo-popup" class="promo-popup" style="display: none;"></div>
+</div>
+
+
+<style>
+    /* For mobile phones: */
+    @media all and (max-width: 768px),
+    print {
+        .promo-modal-popup {
+            width: 78% !important;
+            left: 0px !important;
+            height: 500px !important;
+            margin-top: 80px !important;
+        }
+
+        .promo-modal-popup .modal-inner-wrap {
+            height: auto !important;
+        }
+
+        .promo-modal-popup button#close-popup-modal {
+            background: transparent;
+            position: fixed;
+            left: auto !important;
+            right: 0%;
+            width: 44px !important;
+            border: none;
+        }
+
+        .promo-modal-popup button#close-popup-modal:before {
+            font-size: 25px !important;
+            line-height: 0px !important;
+            content: '\f057';
+            font-family: 'Fontawesome';
+        }
+    }
+
+    .promo-modal-popup {
+        width: 800px;
+        margin: auto;
+        margin-top: 30px;
+        height: 500px;
+    }
+
+    .promo-modal-popup .modal-inner-wrap {
+        margin: 5rem auto !important;
+        width: 75% !important;
+        left: 0px !important;
+    }
+
+    .promo-modal-popup .modal-content {
+        padding: 0px !important;
+    }
+
+    .promo-modal-popup .promo-popup {
+        max-width: 1280px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .promo-modal-popup .custom-row {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: 0px;
+        margin-left: 0px;
+    }
+
+    .promo-modal-popup .custom-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 0px !important;
+    }
+
+    .promo-modal-popup .card-image {
+        background-color: transparent;
+        height: auto !important;
+        margin-bottom: 0px !important;
+    }
+
+    .promo-modal-popup .card-img-tiles {
+        display: block;
+    }
+
+    .promo-modal-popup .card-img-tiles .inner {
+        display: table;
+        width: 100%
+    }
+
+    .promo-modal-popup .main-popup-img {
+        display: table-cell;
+        width: 33%;
+        padding: 0px;
+        vertical-align: middle;
+    }
+
+    .promo-modal-popup button#close-popup-modal {
+        background: transparent;
+        position: fixed;
+        left: auto;
+        right: 0%;
+        width: 53px;
+        border: none;
+    }
+
+    .promo-modal-popup button#close-popup-modal:before {
+        font-size: 35px;
+        content: '\f057';
+        font-family: 'Fontawesome';
+    }
+
+    .promo-modal-popup img.popup-image {
+        height: auto;
+        display: inherit;
+    }
+</style>

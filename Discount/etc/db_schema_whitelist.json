@@ -1,0 +1,47 @@
+{
+    "mit_discount_label": {
+        "column": {
+            "label_id": true,
+            "product_id": true,
+            "customer_group_id": true,
+            "website_id": true,
+            "discount_label": true,
+            "discount_img_path": true,
+            "rule_id": true,
+            "sort_order": true,
+            "discount_img_id": true,
+            "from_date": true,
+            "to_date": true,
+            "width": true,
+            "height": true,
+            "from_time": true,
+            "to_time": true
+        },
+        "index": {
+            "MIT_DISCOUNT_LABEL_PRODUCT_ID": true,
+            "MIT_DISCOUNT_LABEL_CUSTOMER_GROUP_ID": true,
+            "MIT_DISCOUNT_LABEL_WEBSITE_ID": true,
+            "MIT_DISCOUNT_LABEL_RULE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "MIT_DISCOUNT_LBL_RULE_ID_WS_ID_CSTR_GROUP_ID_PRD_ID_SORT_ORDER": true,
+            "UNQ_D2028EB769E0A11DD98FD534BE538254": true,
+            "UNQ_180819B42A13ABB2372CB25FA60264C6": true
+        }
+    },
+    "mit_discount_label_image": {
+        "column": {
+            "label_image_id": true,
+            "name": true,
+            "main_css_class": true,
+            "sub_css_class": true,
+            "img_path": true,
+            "width": true,
+            "height": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

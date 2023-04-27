@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="MIT_Report::order_index" title="Ordered Product" module="MIT_Report" sortOrder="9999" resource="MIT_Report::order_index" parent="Magento_Reports::report_products" action="mit_report/order/index"/>
+		<add id="MIT_Report::order_refund" title="Ordered Refund Product" module="MIT_Report" sortOrder="9999" resource="MIT_Report::order_refund" parent="Magento_Reports::report_products" action="mit_report/order/refunded"/>
+	</menu>
+</config>

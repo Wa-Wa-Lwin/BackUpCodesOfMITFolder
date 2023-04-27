@@ -1,0 +1,61 @@
+div[id^="option-label-Size-"] {
+    width: 123px !important;
+    background-color: transparent !important;
+    padding: 5px 0px !important;
+    border-radius: 3px;
+}
+
+div[id^="option-label-color-"] {
+    border-radius: 3px;
+}
+
+.fotorama__thumb-border,
+.fotorama__loaded--img,
+.fotorama__img {
+    border-radius: 3px !important;
+}
+
+.fotorama__thumb__arr--right .fotorama__thumb--icon {
+    background-position: -25px -345px !important;
+}
+
+.fotorama__stage {
+    border: none !important;
+}
+
+.product-info-stock-sku>span.discount-percent-detail-updated {
+    position: relative;
+    z-index: 1;
+    background: #ff5501;
+    color: #fff;
+    padding: 7px;
+    border-radius: 3px;
+    margin: 1.5rem;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+ol.product-items .product-image-photo {
+    margin: 0 !important;
+    height: 100% !important;
+    height: -moz-available !important;
+    height: -webkit-fill-available !important;
+    height: fill-available !important;
+}
+
+.page-title-wrapper .page-title {
+    display: block !important;
+}
+
+.prices-tier.items .price-tier_price,
+.prices-tier.items .benefit {
+    margin: 0 3px;
+}
+
+.prices-tier.items .item {
+    display: flex;
+}
+
+.prices-tier.items .price-tier_price .price {
+    font-size: 14px;
+}

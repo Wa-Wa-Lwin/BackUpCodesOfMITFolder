@@ -1,0 +1,52 @@
+<?php
+
+
+use MIT\Navigation\Block\Widget\CustomSideMenu;
+
+/** @var CustomSideMenu $block */
+$menuList = $block->getMenuList();
+$mainId = 1;
+?>
+
+<div class="custom_hamburger-menu">
+    <input id="custom_menu__toggle" type="checkbox" />
+    <label class="custom_menu__btn" for="custom_menu__toggle">
+        <!-- <span></span> -->
+        <div class="burgericon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </label>
+
+    <div class="arrow-up"></div>
+    <div class="custom_menu__box tree nestedsidemenu">
+        <ul id="custom-side-menu">
+            <?php foreach ($menuList as $menu) : ?>
+                <?php if ($menu->getProductCount() > 0 || $menu->getChildrenData()) : ?>
+
+                    <li id="<?php echo ($mainId) ?>" class="<?php echo ($menu->getChildrenData() ? 'side-child' : 'side-no-child') ?>" 
+                    url="<?php echo ($menu->getUrl()) ?>"><?php echo ($menu->getChildrenData() ? '<span class="forward-carret"></span>' : '') ?><a href="#"><?= $block->escapeHtml(__($menu->getName())) ?></a></li>
+                <?php endif; ?>
+                <?php $mainId++ ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>
+
+<script>
+    require(
+        [
+            'jquery'
+        ],
+        function($) {
+            $menuList = <?= $block->getDynamicMenuList() ?>;
+        });
+</script>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "MIT_Navigation/js/navigation-side-menu": {}
+        }
+    }
+</script>

@@ -1,0 +1,9 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+	<event name="adminhtml_controller_catalogrule_after_save_custom">
+		<observer name="mit_weeklypromo_observer_adminhtml_controllercatalogruleaftersavecustom_adminhtml_controller_catalogrule_after_save_custom" instance="MIT\WeeklyPromo\Observer\Adminhtml\ControllerCatalogruleAfterSaveCustom"/>
+	</event>
+    <event name="adminhtml_controller_salesrule_after_save_custom">
+		<observer name="mit_weeklypromo_observer_adminhtml_controllersaleruleaftersavecustom_adminhtml_controller_salerule_after_save_custom" instance="MIT\WeeklyPromo\Observer\Adminhtml\ControllerSaleruleAfterSaveCustom"/>
+	</event>
+</config>

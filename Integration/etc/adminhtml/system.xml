@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="mit" translate="label" sortOrder="999">
+			<label>mit</label>
+		</tab>
+		<section id="custom_integration" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Integration</label>
+			<tab>mit</tab>
+			<resource>MIT_Integration::config_mit_integration</resource>
+			<group id="stock" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Stock</label>
+				<field id="enabled" type="select" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Enabled</label>
+					<comment/>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+				</field>
+				<field id="token_url" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Token Url</label>
+					<comment/>
+				</field>
+				<field id="stock_url" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Stock Url</label>
+					<comment/>
+				</field>
+				<field id="button_id" translate="label" type="button" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+    				<label>Integration</label>
+    				<frontend_model>MIT\Integration\Block\Adminhtml\System\Config\Button</frontend_model>
+				</field>
+			</group>
+			<group id="simple" sortOrder="11" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Simple Product</label>
+				<field id="simple_sku" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product SKU</label>
+					<comment/>
+				</field>
+				<field id="simple_name" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product Name</label>
+					<comment/>
+				</field>
+				<field id="simple_stock" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product Stock</label>
+					<comment/>
+				</field>
+				<field id="simple_categories" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product Categories</label>
+					<comment/>
+				</field>
+				<field id="simple_price" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product Price</label>
+					<comment/>
+				</field>
+				<field id="simple_attribute" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product Attribute</label>
+					<comment/>
+				</field>
+				<field id="simple_special_price" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product Special Price</label>
+					<comment/>
+				</field>
+				<field id="simple_from_date" type="date" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product From Date</label>
+					<frontend_model>MIT\Integration\Block\DatePicker</frontend_model>
+					<comment/>
+				</field>
+				<field id="simple_to_date" type="date" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Product To Date</label>
+					<frontend_model>MIT\Integration\Block\DatePicker</frontend_model>
+					<comment/>
+				</field>
+				<field id="button_id" translate="label" type="button" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+    				<label>Integration</label>
+    				<frontend_model>MIT\Integration\Block\Adminhtml\System\Config\ButtonSimple</frontend_model>
+				</field>
+			</group>
+
+			<group id="configurable" sortOrder="11" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Configurable Product</label>
+				<field id="configurable_sku" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Configurable Product SKU</label>
+					<comment/>
+				</field>
+				<field id="configurable_name" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Configurable Product Name</label>
+					<comment/>
+				</field>
+				<field id="configurable_categories" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Configurable Product Categories</label>
+					<comment/>
+				</field>
+				<field id="configurable_child_skus" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Configurable Child Skus</label>
+					<comment/>
+				</field>
+				<field id="configurable_attribute" type="text" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Configurable Product Attribute</label>
+					<comment/>
+				</field>
+				<field id="button_id" translate="label" type="button" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+    				<label>Integration</label>
+    				<frontend_model>MIT\Integration\Block\Adminhtml\System\Config\ButtonConfigurable</frontend_model>
+				</field>
+			</group>
+		</section>
+	</system>
+</config>

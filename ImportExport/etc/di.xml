@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- <type name="Magento\ImportExport\Controller\Adminhtml\Export\Export">
+        <plugin name="MIT_ImportExport_Plugin_Magento_ImportExport_Controller_Adminhtml_Export" type="MIT\ImportExport\Plugin\Magento\ImportExport\Controller\Adminhtml\Export\Export" sortOrder="10" disabled="false"/>
+    </type> -->
+    <type name="Magento\ImportExport\Model\Import\SampleFileProvider">
+        <arguments>
+            <argument name="samples" xsi:type="array">
+                <item name="price_update" xsi:type="string">MIT_ImportExport</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

@@ -1,0 +1,40 @@
+.table-checkout-shipping-method thead tr {
+    display: none;
+}
+
+.table-checkout-shipping-method tbody tr.row {
+    background-color: #fff;
+    margin: 0;
+    padding: 10px;
+    border-radius: 8px;
+    display: inline-grid;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+}
+
+.table-checkout-shipping-method tbody tr td {
+    border: none;
+}
+
+.table-checkout-shipping-method tbody {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 10px;
+}
+
+.table-checkout-shipping-method tbody tr td {
+    border: none;
+    padding: 0;
+    padding-left: 25px;
+}
+
+.table-checkout-shipping-method tbody tr td:first-child {
+    position: absolute;
+}
+
+.table-checkout-shipping-method tbody tr:first-child {
+    border: 1px solid #e0926b;
+}
+
+.selected {
+    border: 1px solid #e0926b !important;
+}

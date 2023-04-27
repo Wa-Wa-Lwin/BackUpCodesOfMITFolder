@@ -1,0 +1,59 @@
+<?php
+
+
+use MIT\Navigation\Block\Widget\CustomSideMenu;
+
+/** @var CustomSideMenu $block */
+$menuList = $block->getMenuList();
+?>
+
+<div class="custom_hamburger-menu">
+    <input id="custom_menu__toggle" type="checkbox" />
+    <label class="custom_menu__btn" for="custom_menu__toggle">
+        <span></span>
+    </label>
+
+    <div class="custom_menu__box tree nestedsidemenu">
+        <ul>
+            <?php foreach ($menuList as $menu) : ?>
+                <?php if ($menu->getProductCount() > 0 || $menu->getChildrenData()) : ?>
+                    <li><a href="<?= $block->escapeHtml(__($block->getRouteUrl($menu))) ?>">
+                            <?= $block->escapeHtml(__($menu->getName())) ?>
+                        </a>
+                        <?php if ($menu->getChildrenData()) : ?>
+                            <ul>
+                                <?php foreach ($menu->getChildrenData() as $child) : ?>
+                                    <li><a href="<?= $block->escapeHtml(__($block->getRouteUrl($child))) ?>"><?= $block->escapeHtml(__($child->getName())) ?></a>
+                                        <?php if ($child->getChildrenData()) : ?>
+                                            <ul>
+                                                <?php foreach ($child->getChildrenData() as $grandChild) : ?>
+                                                    <li><a href="<?= $block->escapeHtml(__($block->getRouteUrl($grandChild))) ?>"><?= $block->escapeHtml(__($grandChild->getName())) ?></a>
+                                                        <?php if ($grandChild->getChildrenData()) : ?>
+                                                            <ul>
+                                                                <?php foreach ($grandChild->getChildrenData() as $grandGrandChild) : ?>
+                                                                    <li><a href="<?= $block->escapeHtml(__($block->getRouteUrl($grandGrandChild))) ?>"><?= $block->escapeHtml(__($grandGrandChild->getName())) ?></a>
+                                                                        <?php if ($grandGrandChild->getChildrenData()) : ?>
+                                                                            <ul>
+                                                                                <?php foreach ($grandGrandChild->getChildrenData() as $grandGrandGrandChild) : ?>
+                                                                                    <li><a href="<?= $block->escapeHtml(__($block->getRouteUrl($grandGrandGrandChild))) ?>"><?= $block->escapeHtml(__($grandGrandGrandChild->getName())) ?></a></li>
+                                                                                <?php endforeach; ?>
+                                                                            </ul>
+                                                                        <?php endif; ?>
+                                                                    </li>
+                                                                <?php endforeach; ?>
+                                                            </ul>
+                                                        <?php endif; ?>
+                                                    </li>
+                                                <?php endforeach; ?>
+                                            </ul>
+                                        <?php endif; ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </li>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+</div>

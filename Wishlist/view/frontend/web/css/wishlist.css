@@ -1,0 +1,16 @@
+ol.product-items .four-blocks .product-item-photo .product-image-photo {
+    margin: 0 !important;
+    height: 100% !important;
+    height: -webkit-fill-available !important;
+    width: -webkit-fill-available !important;
+}
+
+ol.product-items .four-blocks .product-item-photo,
+ol.product-items .four-blocks .product-image-container,
+ol.product-items .four-blocks .product-image-wrapper {
+    height: 100% !important;
+    /* padding-bottom: 0 !important; */
+    /* height: -webkit-fill-available !important; */
+    width: -webkit-fill-available !important;
+    margin-bottom: 0 !important;
+}

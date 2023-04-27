@@ -1,0 +1,14 @@
+{
+    "mit_homepagepopup_images": {
+        "column": {
+            "image_id": true,
+            "name": true,
+            "image": true,
+            "is_homepage": true,
+            "is_promotion": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

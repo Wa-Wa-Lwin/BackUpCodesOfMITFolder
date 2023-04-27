@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Email:etc/email_templates.xsd">
+    <template id="massemailpromotioncustomers_email_template" label="Mass Email Promotion Customers" file="mass_email_promotion_customers.html" type="html" module="MIT_Queue" area="frontend"/>
+</config>

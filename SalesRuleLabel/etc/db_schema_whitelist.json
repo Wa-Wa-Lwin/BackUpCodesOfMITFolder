@@ -1,0 +1,58 @@
+{
+    "mit_salesrulelabel": {
+        "column": {
+            "rule_id": true,
+            "rule_name": true,
+            "rule_status": true,
+            "conditions_serialized": true,
+            "actions_serialized": true,
+            "sale_rule_id": true,
+            "website_ids": true,
+            "customer_group_ids": true,
+            "discount_image_id": true,
+            "discount_label": true,
+            "width": true,
+            "height": true,
+            "from_date": true,
+            "to_date": true,
+            "sort_order": true,
+            "websites": true,
+            "customer_groups": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        },
+        "index": {
+            "MIT_SALESRULELABEL_RULE_STATUS_SORT_ORDER_TO_DATE_FROM_DATE": true
+        }
+    },
+    "mit_salesrule_label_product": {
+        "column": {
+            "rule_id": true,
+            "product_id": true,
+            "rule_product_id": true,
+            "from_time": true,
+            "to_time": true,
+            "customer_group_id": true,
+            "sort_order": true,
+            "website_id": true,
+            "discount_image_id": true,
+            "discount_label": true,
+            "width": true,
+            "height": true
+        },
+        "index": {
+            "MIT_SALESRULE_LABEL_PRODUCT_RULE_ID": true,
+            "MIT_SALESRULE_LABEL_PRODUCT_PRODUCT_ID": true,
+            "MIT_SALESRULE_LABEL_PRODUCT_CUSTOMER_GROUP_ID": true,
+            "MIT_SALESRULE_LABEL_PRODUCT_WEBSITE_ID": true,
+            "MIT_SALESRULE_LABEL_PRODUCT_FROM_TIME": true,
+            "MIT_SALESRULE_LABEL_PRODUCT_TO_TIME": true,
+            "MIT_SALESRULE_LABEL_PRODUCT_DISCOUNT_IMAGE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "UNQ_69CF9016986083EBC6584ED2BC822698": true
+        }
+    }
+}

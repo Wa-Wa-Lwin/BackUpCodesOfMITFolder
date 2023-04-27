@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd" label="Email Items" design_abstraction="custom">
+    <body>
+        <block class="MIT\Queue\Block\Email\Product" name="email.product_items" template="MIT_Queue::email/product.phtml">
+            <arguments>
+                <argument name="cache_lifetime" xsi:type="number">3600</argument>
+            </arguments>
+        </block>
+    </body>
+</page>

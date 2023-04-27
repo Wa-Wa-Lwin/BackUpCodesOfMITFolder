@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Mview/etc/mview.xsd">
+    <view id="mit_catalogrulelabel_rule_indexer" class="MIT\Discount\Model\Indexer\Product\Rule" group="indexer">
+        <subscriptions>
+            <table name="catalogrule" entity_column="rule_id"/>
+        </subscriptions>
+    </view>
+    <view id="mit_catalogrulelabel_product_indexer" class="MIT\Discount\Model\Indexer\Rule\RuleProductIndexer" group="indexer">
+        <subscriptions>
+            <table name="catalog_product_entity" entity_column="entity_id"/>
+            <table name="catalog_product_entity_varchar" entity_column="entity_id"/>
+            <table name="catalog_product_entity_int" entity_column="entity_id"/>
+            <table name="catalog_product_entity_decimal" entity_column="entity_id"/>
+            <table name="catalog_category_product" entity_column="product_id"/>
+            <table name="catalog_product_website" entity_column="product_id"/>
+        </subscriptions>
+    </view>
+</config>

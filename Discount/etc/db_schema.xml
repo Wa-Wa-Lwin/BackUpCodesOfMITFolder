@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+	<table name="mit_discount_label" resource="default" engine="innodb" comment="mit_discount_label Table">
+		<column xsi:type="int" name="label_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="label_id"/>
+		</constraint>
+		<column name="product_id" nullable="false" xsi:type="int" comment="product_id" identity="false"/>
+		<index referenceId="MIT_DISCOUNT_LABEL_PRODUCT_ID" indexType="btree">
+			<column name="product_id"/>
+		</index>
+		<column name="rule_id" nullable="false" xsi:type="int" comment="rule_id" identity="false"/>
+		<index referenceId="MIT_DISCOUNT_LABEL_RULE_ID" indexType="btree">
+			<column name="rule_id"/>
+		</index>
+		<column name="customer_group_id" nullable="false" xsi:type="int" comment="customer_group_id" identity="false"/>
+		<index referenceId="MIT_DISCOUNT_LABEL_CUSTOMER_GROUP_ID" indexType="btree">
+			<column name="customer_group_id"/>
+		</index>
+		<column name="website_id" nullable="false" xsi:type="int" comment="website_id" identity="false"/>
+		<index referenceId="MIT_DISCOUNT_LABEL_WEBSITE_ID" indexType="btree">
+			<column name="website_id"/>
+		</index>
+		<column name="discount_label" nullable="true" xsi:type="text" comment="discount_label"/>
+		<column name="discount_img_id" nullable="true" xsi:type="int" comment="discount_img_id"/>
+		<column xsi:type="int" name="sort_order" unsigned="true" nullable="false" identity="false"
+                default="0" comment="Sort Order"/>
+		 <column xsi:type="int" name="from_time" unsigned="true" nullable="false" identity="false"
+                default="0" comment="From Time"/>
+        <column xsi:type="int" name="to_time" unsigned="true" nullable="false" identity="false" default="0"
+                comment="To time"/>
+		<column name="width" nullable="false" xsi:type="int" comment="width" identity="false"/>
+		<column name="height" nullable="false" xsi:type="int" comment="height" identity="false"/>
+		<column name="discount_label_color" nullable="true" xsi:type="varchar" comment="discount_label_color"/>
+		<column name="discount_label_style" nullable="true" xsi:type="text" comment="discount_label_style"/>
+        <constraint xsi:type="unique" referenceId="UNQ_MIT_DISCOUNT_LABEL">
+            <column name="rule_id"/>
+            <column name="website_id"/>
+            <column name="customer_group_id"/>
+            <column name="product_id"/>
+            <column name="sort_order"/>
+			<column name="from_time"/>
+            <column name="to_time"/>
+        </constraint>
+	</table>
+	<table name="mit_discount_label_image" resource="default" engine="innodb" comment="mit_discount_label_image Table">
+		<column xsi:type="int" name="label_image_id" padding="10" unsigned="true" nullable="false" identity="true" comment="Entity Id"/>
+		<constraint xsi:type="primary" referenceId="PRIMARY">
+			<column name="label_image_id"/>
+		</constraint>
+		<column name="name" nullable="true" xsi:type="text" comment="name"/>
+		<column name="main_css_class" nullable="true" xsi:type="text" comment="main_css_class"/>
+		<column name="sub_css_class" nullable="true" xsi:type="text" comment="sub_css_class"/>
+		<column name="img_path" nullable="true" xsi:type="text" comment="img_path"/>
+		<column name="width" nullable="true" xsi:type="int" comment="discount_img_width"/>
+		<column name="height" nullable="true" xsi:type="int" comment="discount_img_height"/>
+	</table>
+</schema>

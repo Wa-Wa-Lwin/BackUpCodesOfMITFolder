@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="custom_delivery" frontName="custom_delivery">
+            <module name="MIT_Delivery" before="Magento_Backend"/>
+        </route>
+		<route id="addDelivery" frontName="addDelivery">
+			<module name="Mitshop_MyTesting" before="Magento_Backend"/>
+		</route>
+		<route id="readDelivery" frontName="readDelivery">
+			<module name="Mitshop_MyTesting" before="Magento_Backend"/>
+		</route>
+    </router>
+</config>

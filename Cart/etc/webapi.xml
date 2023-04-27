@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/customcarts/mine/items" method="GET">
+        <service class="MIT\Cart\Api\CustomCartItemRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/customguest-carts/:cartId/items" method="GET">
+        <service class="MIT\Cart\Api\CustomCartItemRepositoryInterface" method="getListForGuest"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+    <route url="/V1/customcarts/mine/summary" method="GET">
+        <service class="MIT\Cart\Api\CustomCartTotalRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartId" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/customguest-carts/:cartId/summary" method="GET">
+        <service class="MIT\Cart\Api\CustomCartTotalRepositoryInterface" method="getTotalForGuest"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>   
+    <route url="/V1/customcarts/mine/items/:itemId" method="PUT">
+        <service class="MIT\Cart\Api\CustomCartItemRepositoryInterface" method="updateItemByItemId"/>
+        <resources>
+            <resource ref="self" />
+        </resources>
+        <data>
+            <parameter name="cartItem.quote_id" force="true">%cart_id%</parameter>
+        </data>
+    </route>
+    <route url="/V1/customguest-carts/:cartId/items/:itemId" method="PUT">
+        <service class="MIT\Cart\Api\CustomCartItemRepositoryInterface" method="updateGuestItemByItemId"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
+</routes>
