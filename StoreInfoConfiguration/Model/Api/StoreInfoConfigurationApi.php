@@ -5,42 +5,44 @@ use Psr\Log\LoggerInterface;
 
 use MIT\StoreInfoConfiguration\Model\Api\StoreInfoConfigurationApiFactory;
 use MIT\StoreInfoConfiguration\Api\StoreInfoConfigurationApiInterface;
+use MIT\StoreInfoConfiguration\Helper\Data; 
 
 class StoreInfoConfigurationApi implements StoreInfoConfigurationApiInterface 
 { 
     protected $logger;
     protected $storeInfoConfigurationApiFactory; 
+    protected $dataHelper;
 
     public function __construct(
         LoggerInterface $logger,
-        storeInfoConfigurationApiFactory $storeInfoConfigurationApiFactory
+        storeInfoConfigurationApiFactory $storeInfoConfigurationApiFactory,
+        Data $dataHelper
     )
     {
         $this->logger = $logger;
         $this->storeInfoConfigurationApiFactory = $storeInfoConfigurationApiFactory;
+        $this->dataHelper = $dataHelper;
     }
     
     /**
      * @inheritdoc
      */
-    public function getStoreInfo($store_info_phone_number, $store_info_mail, $store_info_address)
+    
+    public function getStoreInfo()
     {
+        $getStoreInfoPhoneNumber = $this->dataHelper->getStoreInfoPhoneNumber(); 
 
-        $response = ['success' => false];
+        $getStoreInfoMail = $this->dataHelper->getStoreInfoMail(); 
 
-        if ($version_number < "1.0.0" ) {
-            $response = ['success' => true, 'message' => 'Version Need to be updated.'];
-            $this->logger->info('Version Need to be updated.');
-        } else if ($version_number <= "1.1.2") {
-            $response = ['success' => true, 'message' => 'Notification will be sent.'];
-            $this->logger->info('Notification will be sent.');
-        } else {
-            $response = ['success' => true, 'message' => 'It is up to date.'];
-            $this->logger->info('It is up to date.');
-        }
+        $getStoreInfoAddress = $this->dataHelper->getStoreInfoAddress(); 
 
-        //$returnArray = json_encode($response);
-        return array($response); 
+        $response = [
+            'Phone Number' => $getStoreInfoPhoneNumber,
+            'Mail' => $getStoreInfoMail,
+            'Address' => $getStoreInfoAddress
+        ];
+
+        return array($response);     
 
     }
 }

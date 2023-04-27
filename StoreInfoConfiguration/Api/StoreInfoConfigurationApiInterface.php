@@ -1,6 +1,6 @@
 <?php
 
-namespace MIT\StoreInfoConfigurationApi\Api;
+namespace MIT\StoreInfoConfiguration\Api;
 
 interface StoreInfoConfigurationApiInterface
 {
@@ -9,7 +9,11 @@ interface StoreInfoConfigurationApiInterface
      * @param string $store_info_phone_number
      * @param string $store_info_mail
      * @param string $store_info_address
+     * @param string $version_number
      * @return array
      */
-    public function getStoreInfo($store_info_phone_number, $store_info_mail, $store_info_address);
-} 
+    //
+  
+    public function getStoreInfo();
+}
+ 
