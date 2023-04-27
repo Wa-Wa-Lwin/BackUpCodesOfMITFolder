@@ -4,7 +4,7 @@
         <tab id="store_info" translate="label" sortOrder="2">
             <label>Store Info Configuration</label>
         </tab>
-        <section id="configuration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="store_info_configuration" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Configuration</label>
             <tab>store_info</tab>
             <resource>MIT_StoreInfoConfiguration::configuration</resource>
