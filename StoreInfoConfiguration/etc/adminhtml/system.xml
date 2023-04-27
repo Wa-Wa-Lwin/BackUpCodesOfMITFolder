@@ -11,7 +11,7 @@
             <resource>MIT_StoreInfoConfiguration::configuration</resource>
 
             <group id="general" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>General Configuration</label>
+                <label>General Configuration Testing</label>
 
                 <field id="enabled" translate="label comment" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Enabled</label>
