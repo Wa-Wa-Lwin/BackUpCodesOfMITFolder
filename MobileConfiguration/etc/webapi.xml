@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
-    <route method="POST" url="/V1/check-mobile-version/"> 
+    <route method="POST" url="/V1/check/version/"> 
         <service class="MIT\MobileConfiguration\Api\MobileConfigurationApiInterface" method="checkMobileVersion"/>
         <resources>
             <resource ref="anonymous"/>
