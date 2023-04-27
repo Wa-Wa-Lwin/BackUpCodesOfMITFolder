@@ -32,7 +32,7 @@ class Data extends AbstractHelper
     public function getNotificationVersion()
     {
         return $this->scopeConfig->getValue(
-            'configuration/general/notification_version',
+            'mobile_version_configuration/general/notification_version',
             ScopeInterface::SCOPE_STORE
         );
     }
@@ -46,7 +46,7 @@ class Data extends AbstractHelper
     public function getForceUpdateVersion()
     {
         return $this->scopeConfig->getValue(
-            'configuration/general/force_update_version',
+            'mobile_version_configuration/general/force_update_version',
             ScopeInterface::SCOPE_STORE
         );
     } 

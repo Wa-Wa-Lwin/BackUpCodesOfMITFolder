@@ -1,3 +1,0 @@
-<menu>
-    <add id="MIT_MobileConfig::config" title="Mobile Configuration" module="MIT_MobileConfig" sortOrder="10" resource="MIT_MobileConfig::config"/>
-</menu>
