@@ -24,8 +24,7 @@ class Data extends AbstractHelper
         $this->scopeConfig = $scopeConfig;
     }
 
-    /**
-     * Get Store Info Phone Number
+    /**Get Store Info Phone Number
      *
      * @return mixed
      */
@@ -37,8 +36,7 @@ class Data extends AbstractHelper
         );
     }
 
-    /**
-     * Get Store Info Mail
+    /**Get Store Info Mail
      *
      * @return mixed
      */
@@ -50,8 +48,7 @@ class Data extends AbstractHelper
         );
     }
     
-    /**
-     * Get Store Info Add
+    /**Get Store Info Add
      *
      * @return mixed
      */

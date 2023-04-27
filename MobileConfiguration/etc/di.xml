@@ -1,4 +1,10 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Mobile Version -->
     <preference for="MIT\MobileConfiguration\Api\MobileConfigurationApiInterface" type="MIT\MobileConfiguration\Model\Api\MobileConfigurationApi"/>
+
+    <!-- Call Us Now |  Store Info -->
+    <preference for="MIT\MobileConfiguration\Api\StoreInfoConfigurationApiInterface" type="MIT\MobileConfiguration\Model\Api\StoreInfoConfigurationApi"/>    
+
 </config>

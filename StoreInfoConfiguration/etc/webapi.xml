@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../app/code/Magento/Webapi/etc/webapi.xsd">
-    <route method="POST" url="/V1/check/storeinfo/"> 
+    <route method="POST" url="/V1/storeinfo/"> 
         <service class="MIT\StoreInfoConfiguration\Api\StoreInfoConfigurationApiInterface" method="getStoreInfo"/>
         <resources>
             <resource ref="anonymous"/>

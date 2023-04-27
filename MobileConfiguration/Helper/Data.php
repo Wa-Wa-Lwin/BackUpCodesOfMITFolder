@@ -32,7 +32,7 @@ class Data extends AbstractHelper
     public function getNotificationVersion()
     {
         return $this->scopeConfig->getValue(
-            'mobile_version_configuration/mobile_version_general/notification_version',
+            'mobile_configuration/mobile_version_general/notification_version',
             ScopeInterface::SCOPE_STORE
         );
     }
@@ -46,9 +46,46 @@ class Data extends AbstractHelper
     public function getForceUpdateVersion()
     {
         return $this->scopeConfig->getValue(
-            'mobile_version_configuration/mobile_version_general/force_update_version',
+            'mobile_configuration/mobile_version_general/force_update_version',
             ScopeInterface::SCOPE_STORE
         );
     } 
+
+    
+    /**Get Store Info Phone Number
+     *
+     * @return mixed
+     */
+    public function getStoreInfoPhoneNumber()
+    {
+        return $this->scopeConfig->getValue(
+            'mobile_configuration/store_info_general/store_info_phone_number',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+
+    /**Get Store Info Mail
+     *
+     * @return mixed
+     */
+    public function getStoreInfoMail()
+    {
+        return $this->scopeConfig->getValue(
+            'mobile_configuration/store_info_general/store_info_mail',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
+    
+    /**Get Store Info Add
+     *
+     * @return mixed
+     */
+    public function getStoreInfoAddress()
+    {
+        return $this->scopeConfig->getValue(
+            'mobile_configuration/store_info_general/store_info_address',
+            ScopeInterface::SCOPE_STORE
+        );
+    }
 
 }
