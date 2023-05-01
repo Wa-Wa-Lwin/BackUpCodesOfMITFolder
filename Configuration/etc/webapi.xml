@@ -3,7 +3,7 @@
     
     <!-- Mobile Version -->
     <route method="POST" url="/V1/check/version/"> 
-        <service class="MIT\MobileConfiguration\Api\MobileConfigurationApiInterface" method="checkMobileVersion"/>
+        <service class="MIT\Configuration\Api\ConfigurationApiInterface" method="checkMobileVersion"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>
@@ -12,7 +12,7 @@
     <!-- Call Us Now | Store Information -->
     <!-- <route method="POST" url="/V1/storeinfo/">  -->
     <route method="GET" url="/V1/storeinfo/"> 
-        <service class="MIT\MobileConfiguration\Api\StoreInfoConfigurationApiInterface" method="getStoreInfo"/>
+        <service class="MIT\Configuration\Api\ConfigurationApiInterface" method="getStoreInfo"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>

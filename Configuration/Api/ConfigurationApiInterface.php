@@ -1,18 +1,18 @@
 <?php
 
-namespace MIT\MobileConfiguration\Api;
+namespace MIT\Configuration\Api;
 
-interface MobileConfigurationApiInterface
+interface ConfigurationApiInterface
 {
     /**
-     * GET for Post api
+     * POST for Post api
      * @param string $version_number
      * @return array
      */
     public function checkMobileVersion($version_number);
 
     /**
-     * GET for Post api 
+     * GET for Get api 
      * @return array
      */ 
     public function getStoreInfo();
