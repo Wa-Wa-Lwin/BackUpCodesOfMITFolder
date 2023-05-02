@@ -9,10 +9,9 @@
         </resources>
     </route>
 
-    <!-- Call Us Now | Store Information -->
-    <!-- <route method="POST" url="/V1/storeinfo/">  -->
+    <!-- Call Us Now | Store Information -->   
     <route method="GET" url="/V1/storeinfo/"> 
-        <service class="MIT\MobileConfiguration\Api\StoreInfoConfigurationApiInterface" method="getStoreInfo"/>
+        <service class="MIT\MobileConfiguration\Api\StoreInfoCo" method="getStoreInfo"/>
         <resources>
             <resource ref="anonymous"/>
         </resources>

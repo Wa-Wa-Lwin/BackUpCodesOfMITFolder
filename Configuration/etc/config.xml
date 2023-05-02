@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<mit_configuration>
+			<mobile_version_general>
+				<enabled>1</enabled>
+				<force_update_version>0.0.0</force_update_version>
+				<notification_version>1.1.1</notification_version>	
+			</mobile_version_general>
+			<store_info_general>
+                <enabled>1</enabled>
+				<store_info_phone_number>(+95)09....</store_info_phone_number>
+				<store_info_address>Yangon, Myanmar.</store_info_address>
+				<store_info_mail>example@mail.com</store_info_mail>				
+			</store_info_general>
+		</mit_configuration>
+	</default>
+</config>
